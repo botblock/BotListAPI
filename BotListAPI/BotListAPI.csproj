@@ -5,4 +5,8 @@
     <Authors>xXBuilderBXx</Authors>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Discord.Net.WebSocket" Version="2.0.0-beta2-00988" />
+  </ItemGroup>
+
 </Project>

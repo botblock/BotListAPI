@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>BotListAPI</id>
+    <version>1.1.0</version>
+    <authors>xXBuilderBXx</authors>
+    <owners>xXBuilderBXx</owners>
+    <licenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/xXBuilderBXx/BotListAPI</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A C# wrapper for all of the Discord bot list APIs</description>
+    <releaseNotes>First release</releaseNotes>
+    <copyright>Copyright xXBuilderBXx 2018</copyright>
+    <tags>Discord Bot</tags>
+    <dependencies>
+      <dependency id="Discord.Net.WebSocket" version="1.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+	  <file src="BotListAPI\ListClient.cs" target="content\ListClient.cs" />
+	  <file src="BotListAPI\ListConfig.cs" target="content\ListConfig.cs" />
+	  <file src="BotListAPI\ListAPI.cs" target="content\ListAPI.cs" />
+	</files>
+</package>
