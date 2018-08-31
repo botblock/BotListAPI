@@ -6,7 +6,9 @@
 *.user
 *.userosscache
 *.sln.docstates
-Nuget/
+*.nupkg
+pack.cmd
+nuget.exe
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
