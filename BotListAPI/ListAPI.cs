@@ -149,23 +149,23 @@ namespace BotListAPI
                 switch (Type)
                 {
                     case ListType.BotsOnDiscord:
-                        Json = JsonConvert.SerializeObject(new GuildCount(Client), Formatting.Indented);
+                        Json = "{ \"guildCount\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
                         break;
                     case ListType.DiscordBotListv2:
-                        Json = JsonConvert.SerializeObject(new Guilds(Client), Formatting.Indented);
+                        Json = "{ \"guilds\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
                         break;
                     case ListType.DiscordBotWorld:
-                        Json = JsonConvert.SerializeObject(new Guild_Count(Client), Formatting.Indented);
+                        Json = "{ \"guild_count\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
                         break;
                     default:
-                        Json = JsonConvert.SerializeObject(new Server_Count(Client), Formatting.Indented);
+                        Json = "{ \"server_count\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
                         break;
                 }
                 StringContent Content = new StringContent(Json, Encoding.UTF8, "application/json");
                 Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 HttpResponseMessage Res = Http.PostAsync(API, Content).GetAwaiter().GetResult();
                 if (Res.IsSuccessStatusCode)
-                    Client.Log(LogType.Info, $"Successfully posted server count to {Name}\nAPI: {API}\nToken: {Client.Config.DiscordBots}");
+                    Client.Log(LogType.Info, $"Successfully posted server count to {Name}");
                 else
                     Client.Log(LogType.Info, $"Error could not post server count to {Name}, {Res.StatusCode} {Res.ReasonPhrase}");
                 Client.Log(LogType.Debug, "Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
@@ -177,42 +177,6 @@ namespace BotListAPI
                 return false;
             }
             return true;
-        }
-
-        private class Server_Count
-        {
-            public Server_Count(ListClient client)
-            {
-                server_count = client.Discord.Guilds.Count;
-            }
-            public int server_count = 0;
-        }
-
-        private class Guild_Count
-        {
-            public Guild_Count(ListClient client)
-            {
-                guild_count = client.Discord.Guilds.Count;
-            }
-            public int guild_count = 0;
-        }
-
-        private class Guilds
-        {
-            public Guilds(ListClient client)
-            {
-                guilds = client.Discord.Guilds.Count;
-            }
-            public int guilds = 0;
-        }
-
-        private class GuildCount
-        {
-            public GuildCount(ListClient client)
-            {
-                guildCount = client.Discord.Guilds.Count;
-            }
-            public int guildCount = 0;
         }
     }
     public class ListOwner
