@@ -81,6 +81,40 @@ namespace BotListAPI
                 System.Threading.Thread.Sleep(new TimeSpan(0, 5, 0));
                 if (DiscordBots.Enabled && Config.DiscordBots != "")
                     DiscordBots.Post(Debug);
+
+                if (DiscordBotList.Enabled && Config.DiscordBotList != "")
+                    DiscordBotList.Post(Debug);
+
+                if (DiscordBotListv2.Enabled && Config.DiscordBotListv2 != "")
+                    DiscordBotListv2.Post(Debug);
+
+                if (BotsForDiscord.Enabled && Config.BotsForDiscord != "")
+                    BotsForDiscord.Post(Debug);
+
+
+                //if (Carbonitex.Enabled && Config.Carbonitex != "")
+                //    Carbonitex.Post(Debug);
+
+                if (BotListSpace.Enabled && Config.BotListSpace != "")
+                    BotListSpace.Post(Debug);
+
+                if (BotsOnDiscord.Enabled && Config.BotsOnDiscord != "")
+                    BotsOnDiscord.Post(Debug);
+
+                if (DiscordBotWorld.Enabled && Config.DiscordBotWorld != "")
+                    DiscordBotWorld.Post(Debug);
+
+                //if (DiscordBotsGroup.Enabled && Config.DiscordBotsGroup != "")
+                //    DiscordBotsGroup.Post(Debug);
+
+                if (DiscordListApp.Enabled && Config.DiscordListApp != "")
+                    DiscordListApp.Post(Debug);
+
+                if (DiscordServices.Enabled && Config.DiscordServices != "")
+                    DiscordServices.Post(Debug);
+
+                if (DivineBotList.Enabled && Config.DivineBotList != "")
+                    DivineBotList.Post(Debug);
             }
         }
 
