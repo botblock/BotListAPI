@@ -99,8 +99,8 @@ namespace BotListAPI
                     BotsForDiscord.Post(LogType);
 
 
-                //if (Carbonitex.Enabled && Config.Carbonitex != "")
-                //    Carbonitex.Post(LogType);
+                if (Carbonitex.Enabled && Config.Carbonitex != "")
+                    Carbonitex.Post(LogType);
 
                 if (BotListSpace.Enabled && Config.BotListSpace != "")
                     BotListSpace.Post(LogType);

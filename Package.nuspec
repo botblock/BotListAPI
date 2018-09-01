@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>BotListAPI</id>
-    <version>1.0.0</version>
+    <version>1.1.1</version>
     <authors>xXBuilderBXx</authors>
     <licenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/xXBuilderBXx/BotListAPI</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A C# wrapper for all of the Discord bot list APIs</description>
-    <releaseNotes>First release</releaseNotes>
+    <description>A C# lib for all of the Discord bot list APIs</description>
+    <releaseNotes>Added support for Carbonitex, whoops forgot to enable carbonitex auto posting</releaseNotes>
     <copyright>Copyright xXBuilderBXx 2018</copyright>
     <tags>Discord Bot</tags>
     <dependencies>

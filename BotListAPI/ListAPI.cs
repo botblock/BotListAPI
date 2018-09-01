@@ -50,7 +50,7 @@ namespace BotListAPI
                 case ListType.Carbonitex:
                     Name = "Carbonitex";
                     Website = "https://www.carbonitex.net";
-                    API = Website + "";
+                    API = Website + "/discord/data/botdata.php";
                     Owner = new ListOwner("jet#9999", 228290260239515649);
                     break;
                 case ListType.BotListSpace:
@@ -135,10 +135,13 @@ namespace BotListAPI
             if (Http == null)
             {
                 Http = new HttpClient();
-                if (Type == ListType.DiscordBotListv2)
-                    Http.DefaultRequestHeaders.Add("Authorization", "Bot " + GetToken());
-                else
-                Http.DefaultRequestHeaders.Add("Authorization", GetToken());
+                if (Type != ListType.Carbonitex)
+                {
+                    if (Type == ListType.DiscordBotListv2)
+                        Http.DefaultRequestHeaders.Add("Authorization", "Bot " + GetToken());
+                    else
+                        Http.DefaultRequestHeaders.Add("Authorization", GetToken());
+                }
                 API = API.Replace("{0}", Client.Discord.CurrentUser.Id.ToString());
                 Http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 Http.DefaultRequestHeaders.Add("User-Agent", "BotListAPI - " + Client.Discord.CurrentUser.ToString());
@@ -156,6 +159,9 @@ namespace BotListAPI
                         break;
                     case ListType.DiscordBotWorld:
                         Json = "{ \"guild_count\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
+                        break;
+                    case ListType.Carbonitex:
+                        Json = "{ \"servercount\": 0, \"key\": 1 }".Replace("0", Client.Discord.Guilds.Count.ToString()).Replace("1", GetToken());
                         break;
                     default:
                         Json = "{ \"server_count\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
@@ -184,7 +190,6 @@ namespace BotListAPI
                 Client.Log(LogType.Debug, "Exception\n" + ex.ToString());
                 return false;
             }
-            return true;
         }
     }
     public class ListOwner
