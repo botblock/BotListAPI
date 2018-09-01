@@ -14,6 +14,7 @@ If you have any issues/suggestions post an issue here, join my Discord https://d
 
 # How to use
 Install the nuget package here https://www.nuget.org/packages/BotListAPI
+
 Create a new instance of `BotListAPI.ListClient`
 
 It is encouraged to not put tokens in this and instead load a file with the tokens incase you leak all your tokens
