@@ -7,7 +7,10 @@ If you have any issues/suggestions post an issue here, join my Discord https://d
 #### Please see at the bottom of this README for the todo list
 - Diffrent logtypes
 - 11 Bot lists supported
-- 
+- Information about the bot lists, name, website, owner (Name#tag & ID)
+- Supports normal and sharded bots
+- Manually trigger posting
+- Automatically post server count every 5 minutes
 
 # How to use
 Create a new instance of `BotListAPI.ListClient`
