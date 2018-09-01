@@ -165,10 +165,18 @@ namespace BotListAPI
                 Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 HttpResponseMessage Res = Http.PostAsync(API, Content).GetAwaiter().GetResult();
                 if (Res.IsSuccessStatusCode)
+                {
                     Client.Log(LogType.Info, $"Successfully posted server count to {Name}");
+                    Client.Log(LogType.Debug, "Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
+                    return true;
+                }
                 else
+                {
                     Client.Log(LogType.Info, $"Error could not post server count to {Name}, {Res.StatusCode} {Res.ReasonPhrase}");
-                Client.Log(LogType.Debug, "Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
+                    Client.Log(LogType.Debug, "Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
+                    return false;
+                }
+                
             }
             catch (Exception ex)
             {
