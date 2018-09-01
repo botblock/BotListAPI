@@ -9,6 +9,7 @@ If you have any issues/suggestions post an issue here, join my Discord https://d
 - 11 Bot lists supported
 - Information about the bot lists, name, website, owner (Name#tag & ID)
 - Supports normal and sharded bots
+- Supports .net framework and .net core
 - Manually trigger posting
 - Automatically post server count every 5 minutes
 
