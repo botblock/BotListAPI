@@ -1,7 +1,5 @@
-﻿using Discord.WebSocket;
-using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -94,7 +92,7 @@ namespace BotListAPI
                 case ListType.DivineBotList:
                     Name = "Divine Bot List";
                     Website = "https://divinediscordbots.com";
-                    API = Website + "/api/bots/{0}/stats ";
+                    API = Website + "/api/bots/{0}/stats";
                     Owner = new ListOwner("Sworder#1234", 240508683455299584);
                     break;
             }
@@ -132,14 +130,18 @@ namespace BotListAPI
             return "";
         }
 
-        public bool Post(bool Debug = false)
+        public bool Post(LogType type = LogType.None)
         {
             if (Http == null)
             {
                 Http = new HttpClient();
+                if (Type == ListType.DiscordBotListv2)
+                    Http.DefaultRequestHeaders.Add("Authorization", "Bot " + GetToken());
+                else
                 Http.DefaultRequestHeaders.Add("Authorization", GetToken());
                 API = API.Replace("{0}", Client.Discord.CurrentUser.Id.ToString());
                 Http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                Http.DefaultRequestHeaders.Add("User-Agent", "BotListAPI - " + Client.Discord.CurrentUser.ToString());
             }
             try
             {
@@ -147,30 +149,70 @@ namespace BotListAPI
                 switch (Type)
                 {
                     case ListType.BotsOnDiscord:
-                        Json = "{ \"guildCount\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
+                        Json = JsonConvert.SerializeObject(new GuildCount(Client), Formatting.Indented);
                         break;
                     case ListType.DiscordBotListv2:
-                        Json = "{ \"guilds\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
+                        Json = JsonConvert.SerializeObject(new Guilds(Client), Formatting.Indented);
                         break;
                     case ListType.DiscordBotWorld:
-                        Json = "{ \"guild_count\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
+                        Json = JsonConvert.SerializeObject(new Guild_Count(Client), Formatting.Indented);
                         break;
                     default:
-                        Json = "{ \"server_count\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
+                        Json = JsonConvert.SerializeObject(new Server_Count(Client), Formatting.Indented);
                         break;
                 }
                 StringContent Content = new StringContent(Json, Encoding.UTF8, "application/json");
-                Http.PostAsync(API, Content);
-                if (Debug)
-                    Client.Log("Successfully posted server count to " + Name);
+                Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                HttpResponseMessage Res = Http.PostAsync(API, Content).GetAwaiter().GetResult();
+                if (Res.IsSuccessStatusCode)
+                    Client.Log(LogType.Info, $"Successfully posted server count to {Name}\nAPI: {API}\nToken: {Client.Config.DiscordBots}");
+                else
+                    Client.Log(LogType.Info, $"Error could not post server count to {Name}, {Res.StatusCode} {Res.ReasonPhrase}");
+                Client.Log(LogType.Debug, "Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
             }
             catch (Exception ex)
             {
-                if (Debug)
-                    Client.Log($"Error could not post server count to {Name}, {ex.Message}");
+                Client.Log(LogType.Info, $"Error could not post server count to {Name}, {ex.Message}");
+                Client.Log(LogType.Debug, "Exception\n" + ex.ToString());
                 return false;
             }
             return true;
+        }
+
+        private class Server_Count
+        {
+            public Server_Count(ListClient client)
+            {
+                server_count = client.Discord.Guilds.Count;
+            }
+            public int server_count = 0;
+        }
+
+        private class Guild_Count
+        {
+            public Guild_Count(ListClient client)
+            {
+                guild_count = client.Discord.Guilds.Count;
+            }
+            public int guild_count = 0;
+        }
+
+        private class Guilds
+        {
+            public Guilds(ListClient client)
+            {
+                guilds = client.Discord.Guilds.Count;
+            }
+            public int guilds = 0;
+        }
+
+        private class GuildCount
+        {
+            public GuildCount(ListClient client)
+            {
+                guildCount = client.Discord.Guilds.Count;
+            }
+            public int guildCount = 0;
         }
     }
     public class ListOwner

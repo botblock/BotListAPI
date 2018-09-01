@@ -10,7 +10,7 @@ namespace BotListAPI
         public readonly BaseSocketClient Discord;
         private BackgroundWorker Worker = new BackgroundWorker();
         private bool WorkerEnabled = false;
-        public bool Debug = false;
+        public LogType LogType = LogType.Info;
         public ListClient(BaseSocketClient client, ListConfig config)
         {
             Discord = client;
@@ -59,9 +59,12 @@ namespace BotListAPI
         /// </summary>
         public void Start()
         {
-            WorkerEnabled = true;
             if (!WorkerEnabled)
+            {
+                WorkerEnabled = true;
                 Worker.RunWorkerAsync();
+                Log(LogType.Debug, "Enabled auto posting");
+            }
         }
 
         /// <summary>
@@ -69,9 +72,13 @@ namespace BotListAPI
         /// </summary>
         public void Stop()
         {
-            WorkerEnabled = false;
+            
             if (WorkerEnabled)
+            {
+                WorkerEnabled = false;
                 Worker.CancelAsync();
+                Log(LogType.Debug, "Disabled auto posting");
+            }
         }
 
         private void PostCount(object sender, DoWorkEventArgs e)
@@ -80,51 +87,63 @@ namespace BotListAPI
             {
                 System.Threading.Thread.Sleep(new TimeSpan(0, 5, 0));
                 if (DiscordBots.Enabled && Config.DiscordBots != "")
-                    DiscordBots.Post(Debug);
+                    DiscordBots.Post(LogType);
 
                 if (DiscordBotList.Enabled && Config.DiscordBotList != "")
-                    DiscordBotList.Post(Debug);
+                    DiscordBotList.Post(LogType);
 
                 if (DiscordBotListv2.Enabled && Config.DiscordBotListv2 != "")
-                    DiscordBotListv2.Post(Debug);
+                    DiscordBotListv2.Post(LogType);
 
                 if (BotsForDiscord.Enabled && Config.BotsForDiscord != "")
-                    BotsForDiscord.Post(Debug);
+                    BotsForDiscord.Post(LogType);
 
 
                 //if (Carbonitex.Enabled && Config.Carbonitex != "")
-                //    Carbonitex.Post(Debug);
+                //    Carbonitex.Post(LogType);
 
                 if (BotListSpace.Enabled && Config.BotListSpace != "")
-                    BotListSpace.Post(Debug);
+                    BotListSpace.Post(LogType);
 
                 if (BotsOnDiscord.Enabled && Config.BotsOnDiscord != "")
-                    BotsOnDiscord.Post(Debug);
+                    BotsOnDiscord.Post(LogType);
 
                 if (DiscordBotWorld.Enabled && Config.DiscordBotWorld != "")
-                    DiscordBotWorld.Post(Debug);
+                    DiscordBotWorld.Post(LogType);
 
                 //if (DiscordBotsGroup.Enabled && Config.DiscordBotsGroup != "")
                 //    DiscordBotsGroup.Post(Debug);
 
                 if (DiscordListApp.Enabled && Config.DiscordListApp != "")
-                    DiscordListApp.Post(Debug);
+                    DiscordListApp.Post(LogType);
 
                 if (DiscordServices.Enabled && Config.DiscordServices != "")
-                    DiscordServices.Post(Debug);
+                    DiscordServices.Post(LogType);
 
                 if (DivineBotList.Enabled && Config.DivineBotList != "")
-                    DivineBotList.Post(Debug);
+                    DivineBotList.Post(LogType);
             }
         }
 
-        public void Log(string text)
+        public void Log(LogType type, string text)
         {
-            Console.WriteLine("[BotListAPI] " + text);
+            if (LogType >= type)
+                Console.WriteLine("[BotListAPI] " + text);
         }
     }
     public enum ListType
     {
         DiscordBots, DiscordBotList, DiscordBotListv2, BotsForDiscord, Carbonitex, BotListSpace, BotsOnDiscord, DiscordBotWorld, DiscordBotsGroup, DiscordListApp, DiscordServices, DivineBotList
+    }
+    public enum LogType
+    {
+        /// <summary>Dont log anything to console</summary>
+        None,
+
+        /// <summary>Log success/fail to console</summary>
+        Info,
+
+        /// <summary>Log everything including request responses in json to console</summary>
+        Debug
     }
 }

@@ -4,7 +4,6 @@
     <id>BotListAPI</id>
     <version>1.0.0</version>
     <authors>xXBuilderBXx</authors>
-    <owners>xXBuilderBXx</owners>
     <licenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/xXBuilderBXx/BotListAPI</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -14,11 +13,10 @@
     <tags>Discord Bot</tags>
     <dependencies>
       <dependency id="Discord.Net.WebSocket" version="1.0.0" />
+	  <dependency id="Newtonsoft.Json" version="1.0.0" />
     </dependencies>
   </metadata>
   <files>
-	  <file src="BotListAPI\ListClient.cs" target="content\ListClient.cs" />
-	  <file src="BotListAPI\ListConfig.cs" target="content\ListConfig.cs" />
-	  <file src="BotListAPI\ListAPI.cs" target="content\ListAPI.cs" />
+	  <file src="BotListAPI\bin\Release\netstandard2.0\BotListAPI.dll" target="lib\net46\BotListAPI.dll" />
 	</files>
 </package>
