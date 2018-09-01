@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BotListAPI
 {
-    public class TokenConfig
+    public class ListConfig
     {
         /// <summary>
         /// Discord Bots token [bots.discord.pw]
