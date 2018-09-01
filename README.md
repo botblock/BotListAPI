@@ -49,8 +49,8 @@ This stops the background thread
 
 # Bot lists
 - Discord Bots | https://bots.discord.pw
-- Discord Bot List | https://discordbots.org
 - Discord Bot List v2 | https://discordbotlist.com
+- Discord Services | http://discord.services
 - Bots For Discord | https://botsfordiscord.com
 - Carbonitex | https://www.carbonitex.net
 - Bot List Space | https://botlist.space
@@ -58,8 +58,8 @@ This stops the background thread
 - Discord Bot World | https://discordbot.world
 - Discord Bots Group (API is down) | https://discordbots.group
 - Discord List App | https://bots.discordlist.app
-- Discord Services | http://discord.services
 - Divine Bot List | https://divinediscordbots.com
+- Discord Bot List | https://discordbots.org
 
 # Todo
 - Change error status code from string to int value
