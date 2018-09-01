@@ -72,3 +72,4 @@ This stops the background thread
 - Add support for https://botblock.org
 - Add get function to botlist to retrieve guild from DiscordClient
 - Add Get function to botlist owner to retrieve user from DiscordClient
+- Add PostAll function
