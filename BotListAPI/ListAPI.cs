@@ -1,18 +1,27 @@
-﻿using Newtonsoft.Json;
+﻿using Discord;
+using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BotListAPI
 {
+    /// <summary> Class for bot list API </summary>
     public class ListAPI
     {
-
+        /// <summary> ID of the bot list </summary>
+        public readonly ulong Id;
+        /// <summary> Name of the bot list </summary>
         public readonly string Name;
+        /// <summary> Website for the bot list </summary>
         public readonly string Website;
+        /// <summary> API for the bot list </summary>
         public string API;
+        /// <summary> Owner of the bot list </summary>
         public readonly ListOwner Owner;
+        /// <summary> Enable/Disable auto posting </summary>
         public bool Enabled = true;
         private HttpClient Http;
         private ListClient Client;
@@ -74,7 +83,7 @@ namespace BotListAPI
                 case ListType.DiscordBotsGroup:
                     Name = "Discord Bots Group";
                     Website = "https://discordbots.group";
-                    API = Website + "";
+                    API = Website + "/api/bot/{0}";
                     Owner = new ListOwner("DetectiveHuman#0767", 423220263161692161);
                     break;
                 case ListType.DiscordListApp:
@@ -98,7 +107,18 @@ namespace BotListAPI
             }
         }
 
-        private string GetToken()
+        //public async Task<IGuild> GetGuildAsync()
+       // {
+        //    return await (Client.Discord as IDiscordClient).GetGuildAsync()
+       // }
+
+        private void Log(string text)
+        {
+            Console.WriteLine($"[BotListAPI] " + text);
+        }
+
+        /// <summary> Get the token for this bot list </summary>
+        public string GetToken()
         {
             switch (Type)
             {
@@ -130,10 +150,21 @@ namespace BotListAPI
             return "";
         }
 
-        public bool Post(LogType type = LogType.None)
+        /// <summary> Post server count to this bot list </summary>
+        public bool Post(LogType type)
         {
+            if (Client.Discord == null)
+            {
+                Log("Cannot post server count, Discord client is null");
+                return false;
+            }
             if (Http == null)
             {
+                if (Client.Discord.CurrentUser == null)
+                {
+                    Log("Cannot post server count, CurrentUser is null");
+                    return false;
+                }
                 Http = new HttpClient();
                 if (Type != ListType.Carbonitex)
                 {
@@ -163,6 +194,9 @@ namespace BotListAPI
                     case ListType.Carbonitex:
                         Json = "{ \"servercount\": 0, \"key\": 1 }".Replace("0", Client.Discord.Guilds.Count.ToString()).Replace("1", GetToken());
                         break;
+                    case ListType.DiscordBotsGroup:
+                        Json = Json = "{ \"count\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
+                        break;
                     default:
                         Json = "{ \"server_count\": 0 }".Replace("0", Client.Discord.Guilds.Count.ToString());
                         break;
@@ -172,22 +206,28 @@ namespace BotListAPI
                 HttpResponseMessage Res = Http.PostAsync(API, Content).GetAwaiter().GetResult();
                 if (Res.IsSuccessStatusCode)
                 {
-                    Client.Log(LogType.Info, $"Successfully posted server count to {Name}");
-                    Client.Log(LogType.Debug, "Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
+                    if (type >= LogType.Info)
+                        Log($"Successfully posted server count to {Name}");
+                    if (type == LogType.Debug)
+                        Log("Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
                     return true;
                 }
                 else
                 {
-                    Client.Log(LogType.Info, $"Error could not post server count to {Name}, {Res.StatusCode} {Res.ReasonPhrase}");
-                    Client.Log(LogType.Debug, "Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
+                    if (type >= LogType.Info)
+                        Log($"Error could not post server count to {Name}, {(int)Res.StatusCode} {Res.ReasonPhrase}");
+                    if (type == LogType.Debug)
+                        Log("Request response in JSON\n" + JsonConvert.SerializeObject(Res, Formatting.Indented));
                     return false;
                 }
                 
             }
             catch (Exception ex)
             {
-                Client.Log(LogType.Info, $"Error could not post server count to {Name}, {ex.Message}");
-                Client.Log(LogType.Debug, "Exception\n" + ex.ToString());
+                if (type >= LogType.Info)
+                    Log($"Error could not post server count to {Name}, {ex.Message}");
+                if (type == LogType.Debug)
+                    Log("Exception\n" + ex.ToString());
                 return false;
             }
         }

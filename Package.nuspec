@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>BotListAPI</id>
-    <version>1.1.1</version>
+    <version>1.2.0</version>
     <authors>xXBuilderBXx</authors>
     <licenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/xXBuilderBXx/BotListAPI</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# lib for all of the Discord bot list APIs</description>
-    <releaseNotes>Added support for Carbonitex, whoops forgot to enable carbonitex auto posting</releaseNotes>
+    <releaseNotes>Commented a lot of code, set auto post timer to 10 minutes, fixed post logging and enabled discord bots group</releaseNotes>
     <copyright>Copyright xXBuilderBXx 2018</copyright>
     <tags>Discord Bot</tags>
     <dependencies>
