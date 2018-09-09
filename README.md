@@ -5,13 +5,13 @@ If you have any issues/suggestions post an issue here, join my Discord https://d
 
 # Features
 #### Please see at the bottom of this README for the todo list
-- Diffrent logtypes
-- 12 Bot lists supported
+- Diffrent logtypes (none, error only, info, debug)
+- 14 Bot lists supported
 - Information about the bot lists, name, website, owner (Name#tag & ID)
 - Supports normal and sharded bots
 - Supports .net framework and .net core
 - Manually trigger posting
-- Automatically post server count every 5 minutes
+- Automatically post server count every 10 minutes
 
 # How to use
 Install the nuget package here https://www.nuget.org/packages/BotListAPI
@@ -29,17 +29,19 @@ ListClient = new ListClient(_Client, new ListConfig
     Carbonitex = "",
     DiscordBotList = "",
     DiscordBotListv2 = "",
+    DiscordBotListv3 = "",
     DiscordBotsGroup = "",
     DiscordBotWorld = "",
     DiscordListApp = "",
     DiscordServices = "",
-    DivineBotList = ""
+    DivineBotList = "",
+    DiscordBestBots = ""
 );
 ```
 You can manually trigger posting using
 ListClient.DiscordBots.Post();
 
-Or you can automatically post it using the a background thread (every 5 minutes)
+Or you can automatically post it using the a background thread (every 10 minutes)
 
 > ListClient.Start();
 
@@ -47,9 +49,14 @@ This stops the background thread
 
 > ListClient.Stop();
 
+# Supports BotBlock.org
+
+This uses less requests just enable ListClient.BotBlock = true;
+
 # Bot lists
 - Discord Bots | https://bots.discord.pw
 - Discord Bot List v2 | https://discordbotlist.com
+- Discord Bot List v3 | https://discordbotlist.xyz
 - Discord Services | http://discord.services
 - Bots For Discord | https://botsfordiscord.com
 - Carbonitex | https://www.carbonitex.net
@@ -60,11 +67,4 @@ This stops the background thread
 - Discord List App | https://bots.discordlist.app
 - Divine Bot List | https://divinediscordbots.com
 - Discord Bot List | https://discordbots.org
-
-# Todo
-- Add misc functions to check website status
-- Add support for custom json file
-- Add support for log event
-- Add support for https://botblock.org
-- Add get function to botlist to retrieve guild from DiscordClient
-- Add Get function to botlist owner to retrieve user from DiscordClient
+- Discord Best Bots | https://discordsbestbots.xyz
