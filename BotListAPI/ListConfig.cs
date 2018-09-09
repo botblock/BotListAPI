@@ -15,6 +15,9 @@ namespace BotListAPI
         /// <summary> Discord Bot List v2 token | https://discordbotlist.com </summary>
         public string DiscordBotListv2 = "";
 
+        /// <summary> Discord Bot List v3 token | https://discordbotlist.xyz </summary>
+        public string DiscordBotListv3 = "";
+
         /// <summary> Bots For Discord token | https://botsfordiscord.com </summary>
         public string BotsForDiscord = "";
 
@@ -41,5 +44,8 @@ namespace BotListAPI
 
         /// <summary> Divine Bot List token | https://divinediscordbots.com </summary>
         public string DivineBotList = "";
+
+        /// <summary> Divine Best Bots token | https://discordsbestbots.xyz/ </summary>
+        public string DiscordBestBots = "";
     }
 }
