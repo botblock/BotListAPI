@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>BotListAPI</id>
-    <version>1.2.0</version>
+    <version>2.1.0</version>
     <authors>xXBuilderBXx</authors>
     <licenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/xXBuilderBXx/BotListAPI</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# lib for all of the Discord bot list APIs</description>
-    <releaseNotes>Commented a lot of code, set auto post timer to 10 minutes, fixed post logging and enabled discord bots group</releaseNotes>
+    <releaseNotes>Added support for 2 new bot lists and fixed Discord Best Bots</releaseNotes>
     <copyright>Copyright xXBuilderBXx 2018</copyright>
     <tags>Discord Bot</tags>
     <dependencies>

@@ -128,9 +128,23 @@ namespace BotListAPI
                 case ListType.DiscordBestBots:
                     Id = 446682534135201793;
                     Name = "Discord Best Bots";
-                    Website = "https://discordsbestbots.xyz/";
+                    Website = "https://discordsbestbots.xyz";
                     API = Website + "/api/bots/{0}";
                     Owner = new ListOwner("Ice#1234", 302604426781261824);
+                    break;
+                case ListType.DiscordBoats:
+                    Id = 439866052684283905;
+                    Name = "Discord Boats";
+                    Website = "https://discordboats.xyz";
+                    API = Website + "/api/bot/{0}";
+                    Owner = new ListOwner("untocodes#7880", 386941684723744768);
+                    break;
+                case ListType.DiscordBoatsv2:
+                    Id = 421630709585805312;
+                    Name = "Discord Boats";
+                    Website = "https://discordboats.club";
+                    API = Website + "/api/public/bot/stats";
+                    Owner = new ListOwner("Anthony#3912", 233823931830632449);
                     break;
             }
         }
@@ -220,6 +234,10 @@ namespace BotListAPI
                     return Client.Config.DivineBotList;
                 case ListType.DiscordBestBots:
                     return Client.Config.DiscordBestBots;
+                case ListType.DiscordBoats:
+                    return Client.Config.DiscordBoats;
+                case ListType.DiscordBoatsv2:
+                    return Client.Config.DiscordBoatsv2;
             }
             return "";
         }

@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.ComponentModel;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -28,6 +29,7 @@ namespace BotListAPI
         {
             Discord = client;
             Config = config;
+            ServicePointManager.DefaultConnectionLimit = 5;
             Worker.DoWork += new DoWorkEventHandler(PostCount);
             DiscordBots = new ListAPI(this, ListType.DiscordBots);
             DiscordBotList = new ListAPI(this, ListType.DiscordBotList);
@@ -43,6 +45,8 @@ namespace BotListAPI
             DiscordServices = new ListAPI(this, ListType.DiscordServices);
             DivineBotList = new ListAPI(this, ListType.DivineBotList);
             DiscordBestBots = new ListAPI(this, ListType.DiscordBestBots);
+            DiscordBoats = new ListAPI(this, ListType.DiscordBoats);
+            DiscordBoatsv2 = new ListAPI(this, ListType.DiscordBoatsv2);
         }
 
         /// <summary> Enable using botblock.org to post server count (less requests) </summary>
@@ -90,8 +94,14 @@ namespace BotListAPI
         /// <summary> Divine Bot List | https://divinediscordbots.com </summary>
         public ListAPI DivineBotList;
 
-        /// <summary> Discord Best Bots | https://discordsbestbots.xyz/ </summary>
+        /// <summary> Discord Best Bots | https://discordsbestbots.xyz </summary>
         public ListAPI DiscordBestBots;
+
+        /// <summary> Discord Boats | https://discordboats.xyz </summary>
+        public ListAPI DiscordBoats;
+
+        /// <summary> Discord Boats v2 | https://discordboats.club </summary>
+        public ListAPI DiscordBoatsv2;
 
         /// <summary> Start posting server count every 10 minutes </summary>
         public void Start()
@@ -157,6 +167,12 @@ namespace BotListAPI
 
             if (Config.DiscordBestBots != "")
                 DiscordBestBots.Post(type);
+
+            if (Config.DiscordBoats != "")
+                DiscordBoats.Post(type);
+
+            if (Config.DiscordBoatsv2 != "")
+                DiscordBoatsv2.Post(type);
         }
 
         private void PostCount(object sender, DoWorkEventArgs e)
@@ -197,8 +213,10 @@ namespace BotListAPI
                      'bots.discordlist.app': '',
                      'discord.services': '',
                      'discordsbestbots.xyz': '',
-                     'divinediscordbots.com': ''
-                    }";
+                     'divinediscordbots.com': '',
+                     'discordboats.xyz': '',
+                     'discordboats.club': ''
+                     }";
                             JObject Json = JObject.Parse(JsonString);
                             Json["server_count"] = Discord.Guilds.Count;
                             Json["bot_id"] = Discord.CurrentUser.Id;
@@ -214,6 +232,8 @@ namespace BotListAPI
                             Json["discord.services"] = Config.DiscordServices;
                             Json["discordsbestbots.xyz"] = Config.DiscordBestBots;
                             Json["divinediscordbots.com"] = Config.DivineBotList;
+                            Json["discordboats.xyz"] = Config.DiscordBoats;
+                            Json["discordboats.club"] = Config.DiscordBoatsv2;
                             try
                             {
                                 StringContent Content = new StringContent(JsonConvert.SerializeObject(Json), Encoding.UTF8, "application/json");
@@ -245,7 +265,7 @@ namespace BotListAPI
                     {
                         if (DiscordBots.Enabled && Config.DiscordBots != "")
                             DiscordBots.Post(LogType);
-
+                        
                         if (DiscordBotList.Enabled && Config.DiscordBotList != "")
                             DiscordBotList.Post(LogType);
 
@@ -284,6 +304,12 @@ namespace BotListAPI
 
                         if (DiscordBestBots.Enabled && Config.DiscordBestBots != "")
                             DiscordBestBots.Post(LogType);
+
+                        if (DiscordBoats.Enabled && Config.DiscordBoats != "")
+                            DiscordBoats.Post(LogType);
+
+                        if (DiscordBoatsv2.Enabled && Config.DiscordBoatsv2 != "")
+                            DiscordBoatsv2.Post(LogType);
                     }
                 }
             }
@@ -298,7 +324,10 @@ namespace BotListAPI
     }
     public enum ListType
     {
-        DiscordBots, DiscordBotList, DiscordBotListv2, DiscordBotListv3, BotsForDiscord, Carbonitex, BotListSpace, BotsOnDiscord, DiscordBotWorld, DiscordBotsGroup, DiscordListApp, DiscordServices, DivineBotList, DiscordBestBots
+        DiscordBots, DiscordBotList, DiscordBotListv2, DiscordBotListv3, BotsForDiscord,
+        Carbonitex, BotListSpace, BotsOnDiscord, DiscordBotWorld, DiscordBotsGroup,
+        DiscordListApp, DiscordServices, DivineBotList, DiscordBestBots, DiscordBoats,
+        DiscordBoatsv2
     }
     public enum LogType
     {

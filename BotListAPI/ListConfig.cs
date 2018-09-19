@@ -45,7 +45,13 @@ namespace BotListAPI
         /// <summary> Divine Bot List token | https://divinediscordbots.com </summary>
         public string DivineBotList = "";
 
-        /// <summary> Divine Best Bots token | https://discordsbestbots.xyz/ </summary>
+        /// <summary> Divine Best Bots token | https://discordsbestbots.xyz </summary>
         public string DiscordBestBots = "";
+
+        /// <summary> Discord Boats token | https://discordboats.xyz </summary>
+        public string DiscordBoats = "";
+
+        /// <summary> Discord Boats v2 token | https://discordboats.club </summary>
+        public string DiscordBoatsv2 = "";
     }
 }
