@@ -6,7 +6,7 @@ If you have any issues/suggestions post an issue here, join my Discord https://d
 # Features
 #### Please see at the bottom of this README for the todo list
 - Diffrent logtypes (none, error only, info, debug)
-- 14 Bot lists supported
+- 16 Bot lists supported
 - Information about the bot lists, name, website, owner (Name#tag & ID)
 - Supports normal and sharded bots
 - Supports .net framework and .net core
@@ -35,7 +35,9 @@ ListClient = new ListClient(_Client, new ListConfig
     DiscordListApp = "",
     DiscordServices = "",
     DivineBotList = "",
-    DiscordBestBots = ""
+    DiscordBestBots = "",
+    DiscordBoats = "",
+    DiscordBoatsv2 = ""
 );
 ```
 You can manually trigger posting using
@@ -68,3 +70,5 @@ This uses less requests just enable ListClient.BotBlock = true;
 - Divine Bot List | https://divinediscordbots.com
 - Discord Bot List | https://discordbots.org
 - Discord Best Bots | https://discordsbestbots.xyz
+- Discord Boats | https://discordboats.xyz
+- Discord Boats v2 | https://discordboats.club
