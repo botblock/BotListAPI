@@ -66,7 +66,7 @@ namespace BotListAPI
                     Id = 374071874222686211;
                     Name = "Bots For Discord";
                     Website = "https://botsfordiscord.com";
-                    API = Website + "/api/v1/bots/{0}";
+                    API = Website + "/api/bot/{0}";
                     Owner = new ListOwner("Habchy#1665", 162780049869635584);
                     break;
                 case ListType.Carbonitex:

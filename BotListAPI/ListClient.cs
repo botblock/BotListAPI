@@ -50,7 +50,7 @@ namespace BotListAPI
         }
 
         /// <summary> Enable using botblock.org to post server count (less requests) </summary>
-        public bool BotBlock = false;
+        public bool BotBlock = true;
 
         /// <summary> Disable all auto posting </summary>
         public bool Disabled = false;
