@@ -53,7 +53,7 @@ This stops the background thread
 
 # Supports BotBlock.org
 
-This uses less requests just enable ListClient.BotBlock = true;
+This uses less requests and is enabled by default with ListClient.BotBlock = true;
 
 # Bot lists
 - Discord Bots | https://bots.discord.pw
