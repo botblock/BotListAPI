@@ -1,12 +1,12 @@
 # BotListAPI
 This is a C# lib that allows you to post your bots server count to all of the Discord bot lists.
 
-If you have any issues/suggestions post an issue here, join my Discord https://discord.gg/WJTYdNb or contact me xXBuilderBXx#8265
+If you have any issues/suggestions post an issue here, join my Discord https://discord.gg/susQ6XA or contact me xXBuilderBXx#8265
 
 # Features
 #### Please see at the bottom of this README for the todo list
 - Diffrent logtypes (none, error only, info, debug)
-- 16 Bot lists supported
+- 21 Bot lists supported
 - Information about the bot lists, name, website, owner (Name#tag & ID)
 - Supports normal and sharded bots
 - Supports .net framework and .net core
@@ -22,32 +22,37 @@ It is encouraged to not put tokens in this and instead load a file with the toke
 ```
 ListClient = new ListClient(_Client, new ListConfig
 {
-    DiscordBots = "",
-    BotsForDiscord = "",
-    BotListSpace = "",
-    BotsOnDiscord = "",
-    Carbonitex = "",
-    DiscordBotList = "",
-    DiscordBotListv2 = "",
-    DiscordBotListv3 = "",
-    DiscordBotsGroup = "",
-    DiscordBotWorld = "",
-    DiscordListApp = "",
-    DiscordServices = "",
-    DivineBotList = "",
-    DiscordBestBots = "",
-    DiscordBoats = "",
-    DiscordBoatsv2 = ""
+    "BotListSpace": "",
+    "BotsForDiscord": "",
+    "BotsOnDiscord": "",
+    "DiscordBoats": "",
+    "DiscordBoatsv2": "",
+    "DiscordBotIndex": "",
+    "DiscordBotListv2": "",
+    "DiscordBotListv3": "",
+    "TerminalInk": "",
+    "DiscordBotsReview": "",
+    "DiscordBotWorld": "",
+    "DiscordBots": "",
+    "DiscordBotsList": "",
+    "DiscordBotsGroup": "",
+    "DiscordListApp": "",
+    "DiscordServices": "",
+    "DiscordBestBots": "",
+    "DiscordsExtremeList": "",
+    "DivineBotList": "",
+    "DiscordBotList": "",
+    "Carbonitex": ""
 );
 ```
 You can manually trigger posting using
-ListClient.DiscordBots.Post();
+ListClient.ListType.DiscordBots.Post();
 
-Or you can automatically post it using the a background thread (every 10 minutes)
+Or you can automatically post it using the a background task (every 10 minutes)
 
 > ListClient.Start();
 
-This stops the background thread
+This stops the background task
 
 > ListClient.Stop();
 
@@ -56,19 +61,24 @@ This stops the background thread
 This uses less requests and is enabled by default with ListClient.BotBlock = true;
 
 # Bot lists
-- Discord Bots | https://bots.discord.pw
+- Botlist Space | https://botlist.space
+- Bots For Discord | https://botsfordiscord.com
+- Bots On Discord | https://bots.ondiscord.xyz
+- Discord Boats | https://discord.boats
+- Discord Boats v2 | https://discordboats.club
+- Discord Bot Index | https://discordbotindex.com
 - Discord Bot List v2 | https://discordbotlist.com
 - Discord Bot List v3 | https://discordbotlist.xyz
-- Discord Services | http://discord.services
-- Bots For Discord | https://botsfordiscord.com
-- Carbonitex | https://www.carbonitex.net
-- Bot List Space | https://botlist.space
-- Bots On Discord | https://bots.ondiscord.xyz
+- Terminal | https://ls.terminal.ink
+- Discord Bots Review | https://discordbotsreview.tk
 - Discord Bot World | https://discordbot.world
+- Discord Bots | https://discord.bots.gg
+- Discord Bots List | http://discordbotslist.com
 - Discord Bots Group | https://discordbots.group
 - Discord List App | https://bots.discordlist.app
+- Discord Services | https://discord.services
+- Divine Best Bots | https://discordsbestbots.xyz
+- Discords Extreme List | https://discordsextremelist.tk
 - Divine Bot List | https://divinediscordbots.com
-- Discord Bot List | https://discordbots.org
-- Discord Best Bots | https://discordsbestbots.xyz
-- Discord Boats | https://discordboats.xyz
-- Discord Boats v2 | https://discordboats.club
+- Discord Bot List | https://discordbots.org 
+- Carbonitex | https://carbonitex.net
