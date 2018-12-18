@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>BotListAPI</id>
-    <version>2.2.0</version>
+    <version>3.0.0</version>
     <authors>xXBuilderBXx</authors>
     <licenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/xXBuilderBXx/BotListAPI</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# lib for all of the Discord bot list APIs</description>
-    <releaseNotes>Fixed BotsForDiscord and enabled botblock support by default</releaseNotes>
-    <copyright>Copyright xXBuilderBXx 2018</copyright>
+    <releaseNotes>Cleaned up a lot of code, added 5 new botslists, changed 2 botlist urls, switched auto poster method, fixed logging, moved list functions to ListType</releaseNotes>
+    <copyright>Copyright xXBuilderBXx 2019</copyright>
     <tags>Discord Bot</tags>
     <dependencies>
       <dependency id="Discord.Net.WebSocket" version="1.0.0" />
