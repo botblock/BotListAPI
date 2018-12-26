@@ -6,7 +6,7 @@ If you have any issues/suggestions post an issue here, join my Discord https://d
 # Features
 #### Please see at the bottom of this README for the todo list
 - Diffrent logtypes (none, error only, info, debug)
-- 21 Bot lists supported
+- 20 Bot lists supported
 - Information about the bot lists, name, website, owner (Name#tag & ID)
 - Supports normal and sharded bots
 - Supports .net framework and .net core
@@ -36,7 +36,6 @@ ListClient = new ListClient(_Client, new ListConfig
     "DiscordBots": "",
     "DiscordBotsList": "",
     "DiscordBotsGroup": "",
-    "DiscordListApp": "",
     "DiscordServices": "",
     "DiscordBestBots": "",
     "DiscordsExtremeList": "",
@@ -75,7 +74,6 @@ This uses less requests and is enabled by default with ListClient.BotBlock = tru
 - Discord Bots | https://discord.bots.gg
 - Discord Bots List | http://discordbotslist.com
 - Discord Bots Group | https://discordbots.group
-- Discord List App | https://bots.discordlist.app
 - Discord Services | https://discord.services
 - Divine Best Bots | https://discordsbestbots.xyz
 - Discords Extreme List | https://discordsextremelist.tk
