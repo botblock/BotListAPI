@@ -48,9 +48,6 @@ namespace BotListAPI
         /// <summary> Discord Bots Group token | https://discordbots.group </summary>
         public string DiscordBotsGroup = "";
 
-        /// <summary> Discord List App token | https://bots.discordlist.app </summary>
-        public string DiscordListApp = "";
-
         /// <summary> Discord Services token | https://discord.services </summary>
         public string DiscordServices = "";
 

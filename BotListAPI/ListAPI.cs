@@ -27,7 +27,7 @@ namespace BotListAPI
         public bool Enabled = true;
         private HttpClient Http;
         private ListClient Client;
-        private BotListType Type;
+        private readonly BotListType Type;
         private readonly string Token = "";
         public bool ValidToken()
         {
@@ -179,16 +179,6 @@ namespace BotListAPI
                         API = Website + "/api/bot/{0}";
                         Owner = new ListOwner("DetectiveHuman#0767", 423220263161692161);
                         Token = Client.Config.DiscordBotsGroup;
-                    }
-                    break;
-                case BotListType.DiscordListApp:
-                    {
-                        Id = 475571221946171393;
-                        Name = "Discord List App";
-                        Website = "https://bots.discordlist.app";
-                        API = Website + "/api/bot/{0}/stats";
-                        Owner = new ListOwner("Auxim#0001", 66166172835385344);
-                        Token = Client.Config.DiscordListApp;
                     }
                     break;
                 case BotListType.DiscordServices:

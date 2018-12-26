@@ -149,7 +149,6 @@ namespace BotListAPI
                 Json["discord.bots.gg"] = Config.DiscordBots;
                 Json["discordbotslist.com"] = Config.DiscordBotsList;
                 Json["discordbots.group"] = Config.DiscordBotsGroup;
-                Json["bots.discordlist.app"] = Config.DiscordListApp;
                 Json["discord.services"] = Config.DiscordServices;
                 Json["discordsbestbots.xyz"] = Config.DiscordBestBots;
                 Json["discordsextremelist.tk"] = Config.DiscordsExtremeList;

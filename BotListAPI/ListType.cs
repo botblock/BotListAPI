@@ -22,7 +22,6 @@ namespace BotListAPI
             DiscordBots = new ListAPI(Client, BotListType.DiscordBots);
             DiscordBotsList = new ListAPI(Client, BotListType.DiscordBotsList);
             DiscordBotsGroup = new ListAPI(Client, BotListType.DiscordBotsGroup);
-            DiscordListApp = new ListAPI(Client, BotListType.DiscordListApp);
             DiscordServices = new ListAPI(Client, BotListType.DiscordServices);
             DiscordBestBots = new ListAPI(Client, BotListType.DiscordBestBots);
             DiscordsExtremeList = new ListAPI(Client, BotListType.DiscordsExtremeList);
@@ -74,9 +73,6 @@ namespace BotListAPI
 
             if (DiscordBotsGroup.Enabled && DiscordBotsGroup.ValidToken())
                 DiscordBotsGroup.Post(type);
-
-            if (DiscordListApp.Enabled && DiscordListApp.ValidToken())
-                DiscordListApp.Post(type);
 
             if (DiscordServices.Enabled && DiscordServices.ValidToken())
                 DiscordServices.Post(type);
@@ -139,9 +135,6 @@ namespace BotListAPI
         /// <summary> Discord Bots Group | https://discordbots.group </summary>
         public ListAPI DiscordBotsGroup;
 
-        /// <summary> Discord List App | https://bots.discordlist.app </summary>
-        public ListAPI DiscordListApp;
-
         /// <summary> Discord Services | https://discord.services </summary>
         public ListAPI DiscordServices;
 
@@ -165,7 +158,7 @@ namespace BotListAPI
         BotListSpace, BotsForDiscord, BotsOnDiscord, DiscordBoats, DiscordBoatsv2,
         DiscordBotIndex, DiscordBotListv2, DiscordBotListv3, TerminalInk,
         DiscordBotsReview, DiscordBotWorld, DiscordBots, DiscordBotsList,
-        DiscordBotsGroup, DiscordListApp, DiscordServices, DiscordBestBots,
+        DiscordBotsGroup, DiscordServices, DiscordBestBots,
         DiscordsExtremeList, DivineBotList, DiscordBotList, Carbonitex,
     }
 }
