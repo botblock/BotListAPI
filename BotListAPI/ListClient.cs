@@ -109,53 +109,11 @@ namespace BotListAPI
             }
             if (!isError)
             {
-                string JsonString = @"{
-                     'server_count': 0,
-                     'bot_id': 0,
-                     'botlist.space': '',
-                     'botsfordiscord.com': '',
-                     'bots.ondiscord.xyz': '',
-                     'discord.boats': '',
-                     'discordboats.club': '',
-                     'discordbotindex.com': '',
-                     'discordbotlist.com': '',
-                     'discordbotlist.xyz': '',
-                     'ls.terminal.ink': '',
-                     'discordbotsreview.tk': '',
-                     'discordbot.world': '',
-                     'discord.bots.gg': '',
-                     'discordbotslist.com': '',
-                     'discordbots.group': '',
-                     'bots.discordlist.app': '',
-                     'discord.services': '',
-                     'discordsbestbots.xyz': '',
-                     'discordsextremelist.tk': '',
-                     'divinediscordbots.com': ''
-                     }";
-                JObject Json = JObject.Parse(JsonString);
-                Json["server_count"] = Discord.Guilds.Count;
-                Json["bot_id"] = Discord.CurrentUser.Id;
-                Json["botlist.space"] = Config.BotListSpace;
-                Json["botsfordiscord.com"] = Config.BotsForDiscord;
-                Json["bots.ondiscord.xyz"] = Config.BotsOnDiscord;
-                Json["discord.boats"] = Config.DiscordBoats;
-                Json["discordboats.club"] = Config.DiscordBoatsv2;
-                Json["discordbotindex.com"] = Config.DiscordBotIndex;
-                Json["discordbotlist.com"] = Config.DiscordBotListv2;
-                Json["discordbotlist.xyz"] = Config.DiscordBotListv3;
-                Json["ls.terminal.ink"] = Config.TerminalInk;
-                Json["discordbotsreview.tk"] = Config.DiscordBotsReview;
-                Json["discordbot.world"] = Config.DiscordBotWorld;
-                Json["discord.bots.gg"] = Config.DiscordBots;
-                Json["discordbotslist.com"] = Config.DiscordBotsList;
-                Json["discordbots.group"] = Config.DiscordBotsGroup;
-                Json["discord.services"] = Config.DiscordServices;
-                Json["discordsbestbots.xyz"] = Config.DiscordBestBots;
-                Json["discordsextremelist.tk"] = Config.DiscordsExtremeList;
-                Json["divinediscordbots.com"] = Config.DivineBotList;
+                string JsonString = JsonConvert.SerializeObject(new ListJson(Discord, Config));
+
                 try
                 {
-                    StringContent Content = new StringContent(JsonConvert.SerializeObject(Json), Encoding.UTF8, "application/json");
+                    StringContent Content = new StringContent(JsonString, Encoding.UTF8, "application/json");
                     Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                     HttpResponseMessage Res = Http.PostAsync("https://botblock.org/api/count", Content).GetAwaiter().GetResult();
                     if (Res.IsSuccessStatusCode)

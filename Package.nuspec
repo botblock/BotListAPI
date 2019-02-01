@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>BotListAPI</id>
-    <version>3.0.0</version>
+    <version>3.1.0</version>
     <authors>xXBuilderBXx</authors>
     <licenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/xXBuilderBXx/BotListAPI</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A C# lib for all of the Discord bot list APIs</description>
-    <releaseNotes>Cleaned up a lot of code, added 5 new botslists, changed 2 botlist urls, switched auto poster method, fixed logging, moved list functions to ListType</releaseNotes>
+    <releaseNotes>Removed Discord List App</releaseNotes>
     <copyright>Copyright xXBuilderBXx 2019</copyright>
     <tags>Discord Bot</tags>
     <dependencies>

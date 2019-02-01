@@ -131,16 +131,6 @@ namespace BotListAPI
                         Token = Client.Config.TerminalInk;
                     }
                     break;
-                case BotListType.DiscordBotsReview:
-                    {
-                        Id = 500658335217876997;
-                        Name = "Discord Bots Review";
-                        Website = "https://discordbotsreview.tk";
-                        API = Website + "/api/bot/{0}/stats";
-                        Owner = new ListOwner("RaZeFeiXX#9432", 469716275786940416);
-                        Token = Client.Config.DiscordBotsReview;
-                    }
-                    break;
                 case BotListType.DiscordBotWorld:
                     {
                         Id = 396440418507816960;
@@ -159,16 +149,6 @@ namespace BotListAPI
                         API = Website + "/api/v1/bots/{0}/stats";
                         Owner = new ListOwner("meew0#9811", 66237334693085184);
                         Token = Client.Config.DiscordBots;
-                    }
-                    break;
-                case BotListType.DiscordBotsList:
-                    {
-                        Id = 494311015484358687;
-                        Name = "Discord Bots List";
-                        Website = "https://discordbotslist.com";
-                        API = Website + "/api/post.php";
-                        Owner = new ListOwner("Solar#6173", 287722879481675777);
-                        Token = Client.Config.DiscordBotsList;
                     }
                     break;
                 case BotListType.DiscordBotsGroup:
