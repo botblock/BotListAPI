@@ -76,16 +76,13 @@ namespace BotListAPI
             BotsOnDiscord = config.BotsOnDiscord;
             DiscordBoats = config.DiscordBoats;
             DiscordBoatsv2 = config.DiscordBoatsv2;
-            DiscordBotIndex = config.DiscordBotIndex;
             DiscordBotListv2 = config.DiscordBotListv2;
-            DiscordBotListv3 = config.DiscordBotListv3;
             TerminalInk = config.TerminalInk;
             DiscordBotWorld = config.DiscordBotWorld;
             DiscordBots = config.DiscordBots;
             DiscordBotsGroup = config.DiscordBotsGroup;
             DiscordServices = config.DiscordServices;
             DiscordBestBots = config.DiscordBestBots;
-            DiscordsExtremeList = config.DiscordsExtremeList;
             DivineBotList = config.DivineBotList;
         }
 
@@ -107,14 +104,8 @@ namespace BotListAPI
         [JsonProperty(PropertyName = "discordboats.club")]
         public string DiscordBoatsv2 = "";
 
-        [JsonProperty(PropertyName = "discordbotindex.com")]
-        public string DiscordBotIndex = "";
-
         [JsonProperty(PropertyName = "discordbotlist.com")]
         public string DiscordBotListv2 = "";
-
-        [JsonProperty(PropertyName = "discordbotlist.xyz")]
-        public string DiscordBotListv3 = "";
 
         [JsonProperty(PropertyName = "ls.terminal.ink")]
         public string TerminalInk = "";
@@ -133,9 +124,6 @@ namespace BotListAPI
 
         [JsonProperty(PropertyName = "discordsbestbots.xyz")]
         public string DiscordBestBots = "";
-
-        [JsonProperty(PropertyName = "discordsextremelist.tk")]
-        public string DiscordsExtremeList = "";
 
         [JsonProperty(PropertyName = "divinediscordbots.com")]
         public string DivineBotList = "";

@@ -13,18 +13,13 @@ namespace BotListAPI
             BotsOnDiscord = new ListAPI(Client, BotListType.BotsOnDiscord);
             DiscordBoats = new ListAPI(Client, BotListType.DiscordBoats);
             DiscordBoatsv2 = new ListAPI(Client, BotListType.DiscordBoatsv2);
-            DiscordBotIndex = new ListAPI(Client, BotListType.DiscordBotIndex);
             DiscordBotListv2 = new ListAPI(Client, BotListType.DiscordBotListv2);
-            DiscordBotListv3 = new ListAPI(Client, BotListType.DiscordBotListv3);
             TerminalInk = new ListAPI(Client, BotListType.TerminalInk);
-            DiscordBotsReview = new ListAPI(Client, BotListType.DiscordBotsReview);
             DiscordBotWorld = new ListAPI(Client, BotListType.DiscordBotWorld);
             DiscordBots = new ListAPI(Client, BotListType.DiscordBots);
-            DiscordBotsList = new ListAPI(Client, BotListType.DiscordBotsList);
             DiscordBotsGroup = new ListAPI(Client, BotListType.DiscordBotsGroup);
             DiscordServices = new ListAPI(Client, BotListType.DiscordServices);
             DiscordBestBots = new ListAPI(Client, BotListType.DiscordBestBots);
-            DiscordsExtremeList = new ListAPI(Client, BotListType.DiscordsExtremeList);
             DivineBotList = new ListAPI(Client, BotListType.DivineBotList);
             DiscordBotList = new ListAPI(Client, BotListType.DiscordBotList);
             Carbonitex = new ListAPI(Client, BotListType.Carbonitex);
@@ -47,29 +42,17 @@ namespace BotListAPI
             if (DiscordBoatsv2.Enabled && DiscordBoatsv2.ValidToken())
                 DiscordBoatsv2.Post(type);
 
-            if (DiscordBotIndex.Enabled && DiscordBotIndex.ValidToken())
-                DiscordBotIndex.Post(type);
-
             if (DiscordBotListv2.Enabled && DiscordBotListv2.ValidToken())
                 DiscordBotListv2.Post(type);
 
-            if (DiscordBotListv3.Enabled && DiscordBotListv3.ValidToken())
-                DiscordBotListv3.Post(type);
-
             if (TerminalInk.Enabled && TerminalInk.ValidToken())
                 TerminalInk.Post(type);
-
-            if (DiscordBotsReview.Enabled && DiscordBotsReview.ValidToken())
-                DiscordBotsReview.Post(type);
 
             if (DiscordBotWorld.Enabled && DiscordBotWorld.ValidToken())
                 DiscordBotWorld.Post(type);
 
             if (DiscordBots.Enabled && DiscordBots.ValidToken())
                 DiscordBots.Post(type);
-
-            if (DiscordBotsList.Enabled && DiscordBotsList.ValidToken())
-                DiscordBotsList.Post(type);
 
             if (DiscordBotsGroup.Enabled && DiscordBotsGroup.ValidToken())
                 DiscordBotsGroup.Post(type);
@@ -79,9 +62,6 @@ namespace BotListAPI
 
             if (DiscordBestBots.Enabled && DiscordBestBots.ValidToken())
                 DiscordBestBots.Post(type);
-
-            if (DiscordsExtremeList.Enabled && DiscordsExtremeList.ValidToken())
-                DiscordsExtremeList.Post(type);
 
             if (DivineBotList.Enabled && DivineBotList.ValidToken())
                 DivineBotList.Post(type);
@@ -108,20 +88,11 @@ namespace BotListAPI
         /// <summary> Discord Boats v2 | https://discordboats.club </summary>
         public ListAPI DiscordBoatsv2;
 
-        /// <summary> Discord Bot Index | https://discordbotindex.com </summary>
-        public ListAPI DiscordBotIndex;
-
         /// <summary> Discord Bot List v2 | https://discordbotlist.com </summary>
         public ListAPI DiscordBotListv2;
 
-        /// <summary> Discord Bot List v3 | https://discordbotlist.xyz </summary>
-        public ListAPI DiscordBotListv3;
-
         /// <summary> Terminal | https://ls.terminal.ink </summary>
         public ListAPI TerminalInk;
-
-        /// <summary> Discord Bots Review | https://discordbotsreview.tk </summary>
-        public ListAPI DiscordBotsReview;
 
         /// <summary> Discord Bot World | https://discordbot.world </summary>
         public ListAPI DiscordBotWorld;
@@ -129,8 +100,8 @@ namespace BotListAPI
         /// <summary> Discord Bots | https://discord.bots.gg </summary>
         public ListAPI DiscordBots;
 
-        /// <summary> Discord Bots List | http://discordbotslist.com </summary>
-        public ListAPI DiscordBotsList;
+        /// <summary> Discord Bot List | https://discordbots.org </summary>
+        public ListAPI DiscordBotList;
 
         /// <summary> Discord Bots Group | https://discordbots.group </summary>
         public ListAPI DiscordBotsGroup;
@@ -141,24 +112,19 @@ namespace BotListAPI
         /// <summary> Divine Best Bots | https://discordsbestbots.xyz </summary>
         public ListAPI DiscordBestBots;
 
-        /// <summary> Discords Extreme List | https://discordsextremelist.tk </summary>
-        public ListAPI DiscordsExtremeList;
-
         /// <summary> Divine Bot List | https://divinediscordbots.com </summary>
         public ListAPI DivineBotList;
-
-        /// <summary> Discord Bot List | https://discordbots.org </summary>
-        public ListAPI DiscordBotList;
 
         /// <summary> Carbonitex | https://carbonitex.net </summary>
         public ListAPI Carbonitex;
     }
+
     public enum BotListType
     {
-        BotListSpace, BotsForDiscord, BotsOnDiscord, DiscordBoats, DiscordBoatsv2,
-        DiscordBotIndex, DiscordBotListv2, DiscordBotListv3, TerminalInk,
-        DiscordBotsReview, DiscordBotWorld, DiscordBots, DiscordBotsList,
+        BotListSpace, BotsForDiscord, BotsOnDiscord, DiscordBoats,
+        DiscordBoatsv2, DiscordBotList, DiscordBotListv2,
+        TerminalInk, DiscordBotWorld, DiscordBots,
         DiscordBotsGroup, DiscordServices, DiscordBestBots,
-        DiscordsExtremeList, DivineBotList, DiscordBotList, Carbonitex,
+        DivineBotList, Carbonitex,
     }
 }

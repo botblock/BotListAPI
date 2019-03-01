@@ -91,16 +91,6 @@ namespace BotListAPI
                         Token = Client.Config.DiscordBoatsv2;
                     }
                     break;
-                case BotListType.DiscordBotIndex:
-                    {
-                        Id = 482922868410417163;
-                        Name = "Discord Bot Index";
-                        Website = "https://discordbotindex.com";
-                        API = Website + "/apiv1/bot/{0}";
-                        Owner = new ListOwner("ohlookitsderpy#3939", 145557815287611393);
-                        Token = Client.Config.DiscordBotIndex;
-                    }
-                    break;
                 case BotListType.DiscordBotListv2:
                     {
                         Id = 450100127256936458;
@@ -109,16 +99,6 @@ namespace BotListAPI
                         API = Website + "/api/bots/{0}/stats";
                         Owner = new ListOwner("luke#0123", 149505704569339904);
                         Token = Client.Config.DiscordBotListv2;
-                    }
-                    break;
-                case BotListType.DiscordBotListv3:
-                    {
-                        Id = 477792727577395210;
-                        Name = "Discord Bot List v3";
-                        Website = "https://discordbotlist.xyz";
-                        API = Website + "/api/stats/{0}";
-                        Owner = new ListOwner("Ankrad#0597", 297403616468140032);
-                        Token = Client.Config.DiscordBotListv3;
                     }
                     break;
                 case BotListType.TerminalInk:
@@ -179,16 +159,6 @@ namespace BotListAPI
                         API = Website + "/api/bots/{0}";
                         Owner = new ListOwner("Ice#1234", 302604426781261824);
                         Token = Client.Config.DiscordBestBots;
-                    }
-                    break;
-                case BotListType.DiscordsExtremeList:
-                    {
-                        Id = 513277571329294337;
-                        Name = "Discord Extreme List";
-                        Website = "https://discordsextremelist.tk";
-                        API = Website + "/apt/bot/{0}";
-                        Owner = new ListOwner("Cairo#4883", 208105877838888960);
-                        Token = Client.Config.DiscordsExtremeList;
                     }
                     break;
                 case BotListType.DivineBotList:
@@ -309,18 +279,15 @@ namespace BotListAPI
                         break;
                     case BotListType.DiscordBotListv2:
                     case BotListType.DiscordBestBots:
-                    case BotListType.DiscordBotsList:
                         Count = new Guilds(Client.Discord);
                         break;
                     case BotListType.DiscordBotWorld:
-                    case BotListType.DiscordBotListv3:
                         Count = new Guild_Count(Client.Discord);
                         break;
                     case BotListType.Carbonitex:
                         Count = new ServerCount(Client);
                         break;
                     case BotListType.DiscordBotsGroup:
-                    case BotListType.DiscordsExtremeList:
                         Count = new Count(Client.Discord);
                         break;
                     case BotListType.TerminalInk:

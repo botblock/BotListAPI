@@ -87,6 +87,8 @@ namespace BotListAPI
             }
         }
 
+        public readonly string Version = "";
+
         /// <summary> Post server count to BotBlock.org </summary>
         public void SendBotBlock(LogType type)
         {
@@ -105,7 +107,7 @@ namespace BotListAPI
                 }
                 Http = new HttpClient();
                 Http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                Http.DefaultRequestHeaders.Add("User-Agent", "BotListAPI - " + Discord.CurrentUser.ToString());
+                Http.DefaultRequestHeaders.Add("User-Agent", $"BotListAPI {Version} - " + Discord.CurrentUser.ToString());
             }
             if (!isError)
             {
