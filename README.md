@@ -6,7 +6,7 @@ If you have any issues/suggestions post an issue here, join my Discord https://d
 # Features
 #### Please see at the bottom of this README for the todo list
 - Diffrent logtypes (none, error only, info, debug)
-- 20 Bot lists supported
+- 15 Bot lists supported
 - Information about the bot lists, name, website, owner (Name#tag & ID)
 - Supports normal and sharded bots
 - Supports .net framework and .net core
@@ -65,18 +65,13 @@ This uses less requests and is enabled by default with ListClient.BotBlock = tru
 - Bots On Discord | https://bots.ondiscord.xyz
 - Discord Boats | https://discord.boats
 - Discord Boats v2 | https://discordboats.club
-- Discord Bot Index | https://discordbotindex.com
 - Discord Bot List v2 | https://discordbotlist.com
-- Discord Bot List v3 | https://discordbotlist.xyz
 - Terminal | https://ls.terminal.ink
-- Discord Bots Review | https://discordbotsreview.tk
 - Discord Bot World | https://discordbot.world
 - Discord Bots | https://discord.bots.gg
-- Discord Bots List | http://discordbotslist.com
 - Discord Bots Group | https://discordbots.group
 - Discord Services | https://discord.services
 - Divine Best Bots | https://discordsbestbots.xyz
-- Discords Extreme List | https://discordsextremelist.tk
 - Divine Bot List | https://divinediscordbots.com
 - Discord Bot List | https://discordbots.org 
 - Carbonitex | https://carbonitex.net
