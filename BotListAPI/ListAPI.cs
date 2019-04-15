@@ -101,14 +101,14 @@ namespace BotListAPI
                         Token = Client.Config.DiscordBotListv2;
                     }
                     break;
-                case BotListType.TerminalInk:
+                case BotListType.DiscordApps:
                     {
                         Id = 330777295952543744;
-                        Name = "Terminal";
-                        Website = "https://ls.terminal.ink";
+                        Name = "DiscordApps";
+                        Website = "https://discordapps.dev";
                         API = Website + "/api/v2/bots/{0}";
                         Owner = new ListOwner("7coil#3175", 190519304972664832);
-                        Token = Client.Config.TerminalInk;
+                        Token = Client.Config.DiscordApps;
                     }
                     break;
                 case BotListType.DiscordBotWorld:
@@ -179,6 +179,16 @@ namespace BotListAPI
                         API = Website + "/api/bots/{0}/stats";
                         Owner = new ListOwner("Oliy#0330", 129908908096487424);
                         Token = Client.Config.DiscordBotList;
+                    }
+                    break;
+                case BotListType.LBots:
+                    {
+                        Id = 431438368522371082;
+                        Name = "LBots";
+                        Website = "https://lbots.org";
+                        API = Website + "/api/v1/bots/{0}/stats";
+                        Owner = new ListOwner("Neko#0013", 367330084337745920);
+                        Token = Client.Config.LBots;
                     }
                     break;
                 case BotListType.Carbonitex:
@@ -282,6 +292,7 @@ namespace BotListAPI
                         Count = new Guilds(Client.Discord);
                         break;
                     case BotListType.DiscordBotWorld:
+                    case BotListType.LBots:
                         Count = new Guild_Count(Client.Discord);
                         break;
                     case BotListType.Carbonitex:
@@ -290,8 +301,8 @@ namespace BotListAPI
                     case BotListType.DiscordBotsGroup:
                         Count = new Count(Client.Discord);
                         break;
-                    case BotListType.TerminalInk:
-                        Count = new Terminal_Count(Client.Discord);
+                    case BotListType.DiscordApps:
+                        Count = new DiscordApps_Count(Client.Discord);
                         break;
                     default:
                         Count = new Server_Count(Client.Discord);
@@ -376,9 +387,9 @@ namespace BotListAPI
             }
             public int count;
         }
-        internal class Terminal_Count : ICount
+        internal class DiscordApps_Count : ICount
         {
-            public Terminal_Count(BaseSocketClient client)
+            public DiscordApps_Count(BaseSocketClient client)
             {
                 bot = new Count(client);
             }

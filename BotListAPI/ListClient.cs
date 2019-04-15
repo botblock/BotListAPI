@@ -87,7 +87,7 @@ namespace BotListAPI
             }
         }
 
-        public readonly string Version = "";
+        public readonly string Version = "3.4";
 
         /// <summary> Post server count to BotBlock.org </summary>
         public void SendBotBlock(LogType type)

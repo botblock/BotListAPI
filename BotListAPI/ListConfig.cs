@@ -34,9 +34,9 @@ namespace BotListAPI
 
         /// <summary> Discord Bot List v3 token | https://discordbotlist.xyz </summary>
         public string DiscordBotListv3 = "";
-        
-        /// <summary> Terminal token | https://ls.terminal.ink </summary>
-        public string TerminalInk = "";
+
+        /// <summary> DiscordApps token | https://discordapps.dev </summary>
+        public string DiscordApps = "";
 
         /// <summary> Discord Bot World token | https://discordbot.world </summary>
         public string DiscordBotWorld = "";
@@ -58,7 +58,10 @@ namespace BotListAPI
 
         /// <summary> Divine Bot List token | https://divinediscordbots.com </summary>
         public string DivineBotList = "";
-        
+
+        /// <summary> LBots | https://lbots.org </summary>
+        public string LBots = "";
+
         /// <summary> Carbonitex token | https://carbonitex.net </summary>
         public string Carbonitex = "";
     }
@@ -77,13 +80,14 @@ namespace BotListAPI
             DiscordBoats = config.DiscordBoats;
             DiscordBoatsv2 = config.DiscordBoatsv2;
             DiscordBotListv2 = config.DiscordBotListv2;
-            TerminalInk = config.TerminalInk;
+            DiscordApps = config.DiscordApps;
             DiscordBotWorld = config.DiscordBotWorld;
             DiscordBots = config.DiscordBots;
             DiscordBotsGroup = config.DiscordBotsGroup;
             DiscordServices = config.DiscordServices;
             DiscordBestBots = config.DiscordBestBots;
             DivineBotList = config.DivineBotList;
+            LBots = config.LBots;
         }
 
         public int server_count = 0;
@@ -107,11 +111,11 @@ namespace BotListAPI
         [JsonProperty(PropertyName = "discordbotlist.com")]
         public string DiscordBotListv2 = "";
 
-        [JsonProperty(PropertyName = "ls.terminal.ink")]
-        public string TerminalInk = "";
-
         [JsonProperty(PropertyName = "discordbot.world")]
         public string DiscordBotWorld = "";
+
+        [JsonProperty(PropertyName = "discordapps.dev")]
+        public string DiscordApps = "";
 
         [JsonProperty(PropertyName = "discord.bots.gg")]
         public string DiscordBots = "";
@@ -127,5 +131,8 @@ namespace BotListAPI
 
         [JsonProperty(PropertyName = "divinediscordbots.com")]
         public string DivineBotList = "";
+
+        [JsonProperty(PropertyName = "lbots.org")]
+        public string LBots = "";
     }
 }

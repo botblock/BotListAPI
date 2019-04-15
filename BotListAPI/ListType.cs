@@ -14,7 +14,7 @@ namespace BotListAPI
             DiscordBoats = new ListAPI(Client, BotListType.DiscordBoats);
             DiscordBoatsv2 = new ListAPI(Client, BotListType.DiscordBoatsv2);
             DiscordBotListv2 = new ListAPI(Client, BotListType.DiscordBotListv2);
-            TerminalInk = new ListAPI(Client, BotListType.TerminalInk);
+            DiscordApps = new ListAPI(Client, BotListType.DiscordApps);
             DiscordBotWorld = new ListAPI(Client, BotListType.DiscordBotWorld);
             DiscordBots = new ListAPI(Client, BotListType.DiscordBots);
             DiscordBotsGroup = new ListAPI(Client, BotListType.DiscordBotsGroup);
@@ -22,6 +22,7 @@ namespace BotListAPI
             DiscordBestBots = new ListAPI(Client, BotListType.DiscordBestBots);
             DivineBotList = new ListAPI(Client, BotListType.DivineBotList);
             DiscordBotList = new ListAPI(Client, BotListType.DiscordBotList);
+            LBots = new ListAPI(Client, BotListType.LBots);
             Carbonitex = new ListAPI(Client, BotListType.Carbonitex);
         }
 
@@ -45,8 +46,8 @@ namespace BotListAPI
             if (DiscordBotListv2.Enabled && DiscordBotListv2.ValidToken())
                 DiscordBotListv2.Post(type);
 
-            if (TerminalInk.Enabled && TerminalInk.ValidToken())
-                TerminalInk.Post(type);
+            if (DiscordApps.Enabled && DiscordApps.ValidToken())
+                DiscordApps.Post(type);
 
             if (DiscordBotWorld.Enabled && DiscordBotWorld.ValidToken())
                 DiscordBotWorld.Post(type);
@@ -91,8 +92,8 @@ namespace BotListAPI
         /// <summary> Discord Bot List v2 | https://discordbotlist.com </summary>
         public ListAPI DiscordBotListv2;
 
-        /// <summary> Terminal | https://ls.terminal.ink </summary>
-        public ListAPI TerminalInk;
+        /// <summary> DiscordApps | https://discordapps.dev </summary>
+        public ListAPI DiscordApps;
 
         /// <summary> Discord Bot World | https://discordbot.world </summary>
         public ListAPI DiscordBotWorld;
@@ -115,6 +116,9 @@ namespace BotListAPI
         /// <summary> Divine Bot List | https://divinediscordbots.com </summary>
         public ListAPI DivineBotList;
 
+        /// <summary> LBots | https://lbots.org </summary>
+        public ListAPI LBots;
+
         /// <summary> Carbonitex | https://carbonitex.net </summary>
         public ListAPI Carbonitex;
     }
@@ -123,8 +127,8 @@ namespace BotListAPI
     {
         BotListSpace, BotsForDiscord, BotsOnDiscord, DiscordBoats,
         DiscordBoatsv2, DiscordBotList, DiscordBotListv2,
-        TerminalInk, DiscordBotWorld, DiscordBots,
+        DiscordApps, DiscordBotWorld, DiscordBots,
         DiscordBotsGroup, DiscordServices, DiscordBestBots,
-        DivineBotList, Carbonitex,
+        DivineBotList, LBots, Carbonitex,
     }
 }

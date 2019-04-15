@@ -5,14 +5,14 @@
     <Authors>xXBuilderBXx</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company />
-    <Version>3.3</Version>
+    <Version>3.4</Version>
     <PackageLicenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</PackageLicenseUrl>
     <Copyright>Copyright 2019 xXBuilderBXx</Copyright>
     <RepositoryUrl>https://github.com/xXBuilderBXx/BotListAPI</RepositoryUrl>
     <PackageProjectUrl>https://blazedev.me</PackageProjectUrl>
     <PackageTags>discord</PackageTags>
     <Description>A C# lib for all of the Discord bot list APIs</Description>
-    <PackageReleaseNotes>Removed 4 botlists and cleaned up some code, also added version string</PackageReleaseNotes>
+    <PackageReleaseNotes>Fixed support for terminal aka discordapps, fixed version string and added new botlist lbots</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
