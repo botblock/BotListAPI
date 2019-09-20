@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading.Tasks;
 using System.Timers;
 
 namespace BotListAPI
@@ -43,9 +44,6 @@ namespace BotListAPI
             ListType = new ListType(this);
         }
 
-        /// <summary> Enable using botblock.org to post server count (less requests) </summary>
-        public bool BotBlock = true;
-
         /// <summary> Disable all auto posting </summary>
         public bool Disabled = false;
 
@@ -73,24 +71,19 @@ namespace BotListAPI
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             if (!Disabled)
-                PostAll(LogType, BotBlock);
+                _ = SendBotBlock(LogType);
         }
 
-        /// <summary> Post your server count to all botlist manually of with BotBlock.org  </summary>
-        private void PostAll(LogType type, bool botblock)
+        /// <summary> Post your server count to BotBlock.org  </summary>
+        private async Task Post(LogType type)
         {
-            if (botblock)
-                SendBotBlock(type);
-            else
-            {
-                ListType.PostAll(type);
-            }
+            await SendBotBlock(type);
         }
 
-        public readonly string Version = "3.4";
+        public readonly string Version = "4.0";
 
         /// <summary> Post server count to BotBlock.org </summary>
-        public void SendBotBlock(LogType type)
+        public async Task SendBotBlock(LogType type)
         {
             bool isError = false;
             if (Http == null)
@@ -117,7 +110,7 @@ namespace BotListAPI
                 {
                     StringContent Content = new StringContent(JsonString, Encoding.UTF8, "application/json");
                     Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                    HttpResponseMessage Res = Http.PostAsync("https://botblock.org/api/count", Content).GetAwaiter().GetResult();
+                    HttpResponseMessage Res = await Http.PostAsync("https://botblock.org/api/count", Content);
                     if (Res.IsSuccessStatusCode)
                     {
                             Log(type, LogType.Info, $"Successfully posted server count to BotBlock");
@@ -134,12 +127,6 @@ namespace BotListAPI
                     Log(type, LogType.Error, $"Error could not post server count to BotBlock, {ex.Message}");
                     Log(type, LogType.Debug, "Exception\n" + ex.ToString());
                 }
-
-                if (ListType.Carbonitex.Enabled && Config.Carbonitex != "")
-                    ListType.Carbonitex.Post(type);
-
-                if (ListType.DiscordBotList.Enabled && Config.DiscordBotList != "")
-                    ListType.DiscordBotList.Post(type);
             }
         }
 

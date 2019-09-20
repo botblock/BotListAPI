@@ -20,12 +20,6 @@ namespace BotListAPI
         /// <summary> Discord Boats token | https://discord.boats </summary>
         public string DiscordBoats = "";
 
-        /// <summary> Discord Boats v2 token | https://discordboats.club </summary>
-        public string DiscordBoatsv2 = "";
-        
-        /// <summary> Discord Bot Index token | https://discordbotindex.com </summary>
-        public string DiscordBotIndex = "";
-
         /// <summary> Discord Bot List token | https://discordbots.org </summary>
         public string DiscordBotList = "";
 
@@ -43,12 +37,6 @@ namespace BotListAPI
 
         /// <summary> Discord Bots token | https://discord.bots.gg </summary>
         public string DiscordBots = "";
-
-        /// <summary> Discord Bots Group token | https://discordbots.group </summary>
-        public string DiscordBotsGroup = "";
-
-        /// <summary> Discord Services token | https://discord.services </summary>
-        public string DiscordServices = "";
 
         /// <summary> Divine Best Bots token | https://discordsbestbots.xyz </summary>
         public string DiscordBestBots = "";
@@ -78,13 +66,10 @@ namespace BotListAPI
             BotsForDiscord = config.BotsForDiscord;
             BotsOnDiscord = config.BotsOnDiscord;
             DiscordBoats = config.DiscordBoats;
-            DiscordBoatsv2 = config.DiscordBoatsv2;
             DiscordBotListv2 = config.DiscordBotListv2;
             DiscordApps = config.DiscordApps;
             DiscordBotWorld = config.DiscordBotWorld;
             DiscordBots = config.DiscordBots;
-            DiscordBotsGroup = config.DiscordBotsGroup;
-            DiscordServices = config.DiscordServices;
             DiscordBestBots = config.DiscordBestBots;
             DivineBotList = config.DivineBotList;
             LBots = config.LBots;

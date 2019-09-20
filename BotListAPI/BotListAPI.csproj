@@ -1,18 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>xXBuilderBXx</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Company />
-    <Version>3.4</Version>
-    <PackageLicenseUrl>https://github.com/xXBuilderBXx/BotListAPI/blob/master/LICENSE</PackageLicenseUrl>
+    <Company>Fluxpoint Development</Company>
+    <Version>4.0</Version>
+    <PackageLicenseUrl></PackageLicenseUrl>
     <Copyright>Copyright 2019 xXBuilderBXx</Copyright>
-    <RepositoryUrl>https://github.com/xXBuilderBXx/BotListAPI</RepositoryUrl>
-    <PackageProjectUrl>https://blazedev.me</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/botblock/BotListAPI</RepositoryUrl>
+    <PackageProjectUrl>https://fluxpoint.dev</PackageProjectUrl>
     <PackageTags>discord</PackageTags>
     <Description>A C# lib for all of the Discord bot list APIs</Description>
-    <PackageReleaseNotes>Fixed support for terminal aka discordapps, fixed version string and added new botlist lbots</PackageReleaseNotes>
+    <PackageReleaseNotes>Code cleanup, optimization and removing discontinued botlists</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

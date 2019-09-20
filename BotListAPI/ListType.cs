@@ -12,66 +12,15 @@ namespace BotListAPI
             BotsForDiscord = new ListAPI(Client, BotListType.BotsForDiscord);
             BotsOnDiscord = new ListAPI(Client, BotListType.BotsOnDiscord);
             DiscordBoats = new ListAPI(Client, BotListType.DiscordBoats);
-            DiscordBoatsv2 = new ListAPI(Client, BotListType.DiscordBoatsv2);
             DiscordBotListv2 = new ListAPI(Client, BotListType.DiscordBotListv2);
             DiscordApps = new ListAPI(Client, BotListType.DiscordApps);
             DiscordBotWorld = new ListAPI(Client, BotListType.DiscordBotWorld);
             DiscordBots = new ListAPI(Client, BotListType.DiscordBots);
-            DiscordBotsGroup = new ListAPI(Client, BotListType.DiscordBotsGroup);
-            DiscordServices = new ListAPI(Client, BotListType.DiscordServices);
             DiscordBestBots = new ListAPI(Client, BotListType.DiscordBestBots);
             DivineBotList = new ListAPI(Client, BotListType.DivineBotList);
             DiscordBotList = new ListAPI(Client, BotListType.DiscordBotList);
             LBots = new ListAPI(Client, BotListType.LBots);
             Carbonitex = new ListAPI(Client, BotListType.Carbonitex);
-        }
-
-        public void PostAll(LogType type)
-        {
-            if (BotListSpace.Enabled && BotListSpace.ValidToken())
-                BotListSpace.Post(type);
-
-            if (BotsForDiscord.Enabled && BotsForDiscord.ValidToken())
-                BotsForDiscord.Post(type);
-
-            if (BotsOnDiscord.Enabled && BotsOnDiscord.ValidToken())
-                BotsOnDiscord.Post(type);
-
-            if (DiscordBoats.Enabled && DiscordBoats.ValidToken())
-                DiscordBoats.Post(type);
-
-            if (DiscordBoatsv2.Enabled && DiscordBoatsv2.ValidToken())
-                DiscordBoatsv2.Post(type);
-
-            if (DiscordBotListv2.Enabled && DiscordBotListv2.ValidToken())
-                DiscordBotListv2.Post(type);
-
-            if (DiscordApps.Enabled && DiscordApps.ValidToken())
-                DiscordApps.Post(type);
-
-            if (DiscordBotWorld.Enabled && DiscordBotWorld.ValidToken())
-                DiscordBotWorld.Post(type);
-
-            if (DiscordBots.Enabled && DiscordBots.ValidToken())
-                DiscordBots.Post(type);
-
-            if (DiscordBotsGroup.Enabled && DiscordBotsGroup.ValidToken())
-                DiscordBotsGroup.Post(type);
-
-            if (DiscordServices.Enabled && DiscordServices.ValidToken())
-                DiscordServices.Post(type);
-
-            if (DiscordBestBots.Enabled && DiscordBestBots.ValidToken())
-                DiscordBestBots.Post(type);
-
-            if (DivineBotList.Enabled && DivineBotList.ValidToken())
-                DivineBotList.Post(type);
-
-            if (DiscordBotList.Enabled && DiscordBotList.ValidToken())
-                DiscordBotList.Post(type);
-
-            if (Carbonitex.Enabled && Carbonitex.ValidToken())
-                Carbonitex.Post(type);
         }
         
         /// <summary> Botlist Space | https://botlist.space </summary>
@@ -85,9 +34,6 @@ namespace BotListAPI
 
         /// <summary> Discord Boats | https://discord.boats </summary>
         public ListAPI DiscordBoats;
-
-        /// <summary> Discord Boats v2 | https://discordboats.club </summary>
-        public ListAPI DiscordBoatsv2;
 
         /// <summary> Discord Bot List v2 | https://discordbotlist.com </summary>
         public ListAPI DiscordBotListv2;
@@ -103,12 +49,6 @@ namespace BotListAPI
 
         /// <summary> Discord Bot List | https://discordbots.org </summary>
         public ListAPI DiscordBotList;
-
-        /// <summary> Discord Bots Group | https://discordbots.group </summary>
-        public ListAPI DiscordBotsGroup;
-
-        /// <summary> Discord Services | https://discord.services </summary>
-        public ListAPI DiscordServices;
 
         /// <summary> Divine Best Bots | https://discordsbestbots.xyz </summary>
         public ListAPI DiscordBestBots;
@@ -126,9 +66,9 @@ namespace BotListAPI
     public enum BotListType
     {
         BotListSpace, BotsForDiscord, BotsOnDiscord, DiscordBoats,
-        DiscordBoatsv2, DiscordBotList, DiscordBotListv2,
+        DiscordBotList, DiscordBotListv2,
         DiscordApps, DiscordBotWorld, DiscordBots,
-        DiscordBotsGroup, DiscordServices, DiscordBestBots,
+        DiscordBestBots,
         DivineBotList, LBots, Carbonitex,
     }
 }
