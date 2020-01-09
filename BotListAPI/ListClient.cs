@@ -95,9 +95,10 @@ namespace BotListAPI
             }
             if (!isError)
             {
-                Config.SetCount(Discord);
-                string JsonString = JsonConvert.SerializeObject(Config);
-
+                ListJson Json = Config.GetJson();
+                Json.SetCount(Discord);
+                
+                string JsonString = JsonConvert.SerializeObject(Json);
                 try
                 {
                     StringContent Content = new StringContent(JsonString, Encoding.UTF8, "application/json");
