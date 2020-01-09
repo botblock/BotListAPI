@@ -5,14 +5,14 @@
     <Authors>xXBuilderBXx</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>Fluxpoint Development</Company>
-    <Version>4.0</Version>
+    <Version>5.0</Version>
     <PackageLicenseUrl></PackageLicenseUrl>
     <Copyright>Copyright 2019 xXBuilderBXx</Copyright>
     <RepositoryUrl>https://github.com/botblock/BotListAPI</RepositoryUrl>
     <PackageProjectUrl>https://fluxpoint.dev</PackageProjectUrl>
     <PackageTags>discord</PackageTags>
     <Description>A C# lib for all of the Discord bot list APIs</Description>
-    <PackageReleaseNotes>Code cleanup, optimization and removing discontinued botlists</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated to the latest api standards and added/removed botlists that are available</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

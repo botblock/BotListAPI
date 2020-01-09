@@ -1,9 +1,6 @@
 ﻿using Discord.WebSocket;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
-using System.ComponentModel;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -17,8 +14,6 @@ namespace BotListAPI
     {
         public readonly ListConfig Config = new ListConfig();
 
-        public ListType ListType;
-
         /// <summary> Discord client can be normal or sharded </summary>
         public readonly BaseSocketClient Discord;
 
@@ -28,11 +23,14 @@ namespace BotListAPI
         public Action<LogType, string> MessageLog;
 
         private HttpClient Http;
+
         /// <summary> Log type for auto posting </summary>
         public LogType LogType = LogType.Info;
 
         public ListClient(BaseSocketClient client, ListConfig config)
         {
+            if (config == null)
+                throw new ArgumentException("The list config cannot be null");
             Discord = client;
             Config = config;
             Timer = new Timer
@@ -41,7 +39,6 @@ namespace BotListAPI
                 Enabled = false
             };
             Timer.Elapsed += Timer_Elapsed;
-            ListType = new ListType(this);
         }
 
         /// <summary> Disable all auto posting </summary>
@@ -70,17 +67,11 @@ namespace BotListAPI
         /// <summary> Post server count every 10 minutes  </summary>
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            if (!Disabled)
+            if (Discord != null && !Disabled)
                 _ = SendBotBlock(LogType);
         }
 
-        /// <summary> Post your server count to BotBlock.org  </summary>
-        private async Task Post(LogType type)
-        {
-            await SendBotBlock(type);
-        }
-
-        public readonly string Version = "4.0";
+        public readonly string Version = "5.0";
 
         /// <summary> Post server count to BotBlock.org </summary>
         public async Task SendBotBlock(LogType type)
@@ -104,7 +95,8 @@ namespace BotListAPI
             }
             if (!isError)
             {
-                string JsonString = JsonConvert.SerializeObject(new ListJson(Discord, Config));
+                Config.SetCount(Discord);
+                string JsonString = JsonConvert.SerializeObject(Config);
 
                 try
                 {
