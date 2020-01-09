@@ -22,26 +22,23 @@ It is encouraged to not put tokens in this and instead load a file with the toke
 ```
 ListClient = new ListClient(_Client, new ListConfig
 {
-    "BotListSpace": "",
-    "BotsForDiscord": "",
-    "BotsOnDiscord": "",
-    "DiscordBoats": "",
-    "DiscordBoatsv2": "",
-    "DiscordBotIndex": "",
-    "DiscordBotListv2": "",
-    "DiscordBotListv3": "",
-    "TerminalInk": "",
-    "DiscordBotsReview": "",
-    "DiscordBotWorld": "",
-    "DiscordBots": "",
-    "DiscordBotsList": "",
-    "DiscordBotsGroup": "",
-    "DiscordServices": "",
-    "DiscordBestBots": "",
-    "DiscordsExtremeList": "",
-    "DivineBotList": "",
-    "DiscordBotList": "",
-    "Carbonitex": ""
+   "Botlist": {
+    "botlist.space": "",
+	"bots.ondiscord.xyz": "",
+	"botsfordiscord.com": "",
+	"cloud-botlist.xyz": "",
+	"discord.boats": "",
+	"discord.bots.gg": "",
+	"discordapps.dev": "",
+	"discordbot.world": "",
+	"discordbotlist.com": "",
+	"discordextremelist.xyz": "",
+	"divinediscordbots.com": "",
+	"lbots.org": "",
+	"mythicalbots.xyz": "",
+	"top.gg": "",
+	"yabl.xyz": ""
+  }
 );
 ```
 You can manually trigger posting using
@@ -54,24 +51,3 @@ Or you can automatically post it using the a background task (every 10 minutes)
 This stops the background task
 
 > ListClient.Stop();
-
-# Supports BotBlock.org
-
-This uses less requests and is enabled by default with ListClient.BotBlock = true;
-
-# Bot lists
-- Botlist Space | https://botlist.space
-- Bots For Discord | https://botsfordiscord.com
-- Bots On Discord | https://bots.ondiscord.xyz
-- Discord Boats | https://discord.boats
-- Discord Boats v2 | https://discordboats.club
-- Discord Bot List v2 | https://discordbotlist.com
-- Terminal | https://ls.terminal.ink
-- Discord Bot World | https://discordbot.world
-- Discord Bots | https://discord.bots.gg
-- Discord Bots Group | https://discordbots.group
-- Discord Services | https://discord.services
-- Divine Best Bots | https://discordsbestbots.xyz
-- Divine Bot List | https://divinediscordbots.com
-- Discord Bot List | https://discordbots.org 
-- Carbonitex | https://carbonitex.net
