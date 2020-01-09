@@ -26,11 +26,29 @@ namespace BotListAPI
             }
         }
         public bool shardSupport = true;
-        internal int server_count = 0;
+
         internal string bot_id = "";
 
-        internal int shard_count = 0;
-        internal List<int> shards = new List<int>();
+        private int ServerCount = 0;
+        public int server_count
+        {
+            get { return ServerCount; }
+            internal set { ServerCount = value; }
+        }
+
+        private int ShardCount = 0;
+        public int shard_count
+        {
+            get { return ShardCount; }
+            internal set { ShardCount = value; }
+        }
+
+        private List<int> Shards = new List<int>();
+        public List<int> shards
+        {
+            get { return Shards; }
+            internal set { Shards = value; }
+        }
 
         [JsonProperty(PropertyName = "botlist.space")]
         public string BotListSpace = "";
