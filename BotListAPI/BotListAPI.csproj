@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>xXBuilderBXx</Authors>
+    <Authors>Builderb</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>Fluxpoint Development</Company>
-    <Version>5.3.0</Version>
+    <Version>5.3.1</Version>
     <PackageLicenseUrl></PackageLicenseUrl>
-    <Copyright>Copyright 2019 xXBuilderBXx</Copyright>
+    <Copyright>Copyright 2019 Fluxpoint Development</Copyright>
     <RepositoryUrl>https://github.com/botblock/BotListAPI</RepositoryUrl>
     <PackageProjectUrl>https://fluxpoint.dev</PackageProjectUrl>
     <PackageTags>discord</PackageTags>
