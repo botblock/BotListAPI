@@ -1,7 +1,7 @@
 # BotListAPI
 This is a C# lib that allows you to post your bots server count to all of the Discord bot lists.
 
-If you have any issues/suggestions post an issue here, join my Discord https://discord.gg/TjF6QDC or contact me xXBuilderBXx#8265
+If you have any issues/suggestions post an issue here, join my Discord https://discord.gg/TjF6QDC or contact me xXBuilderBXx#0001
 
 # Features
 #### Please see at the bottom of this README for the todo list
