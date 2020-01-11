@@ -6,8 +6,7 @@ If you have any issues/suggestions post an issue here, join my Discord https://d
 # Features
 #### Please see at the bottom of this README for the todo list
 - Diffrent logtypes (none, error only, info, debug)
-- 15 Bot lists supported
-- Information about the bot lists, name, website, owner (Name#tag & ID)
+- 17 Bot lists supported
 - Supports normal and sharded bots
 - Supports .net framework and .net core
 - Manually trigger posting
@@ -22,23 +21,23 @@ It is encouraged to not put tokens in this and instead load a file with the toke
 ```
 ListClient = new ListClient(_Client, new ListConfig
 {
-   "Botlist": {
-    "botlist.space": "",
-	"bots.ondiscord.xyz": "",
-	"botsfordiscord.com": "",
-	"cloud-botlist.xyz": "",
-	"discord.boats": "",
-	"discord.bots.gg": "",
-	"discordapps.dev": "",
-	"discordbot.world": "",
-	"discordbotlist.com": "",
-	"discordextremelist.xyz": "",
-	"divinediscordbots.com": "",
-	"lbots.org": "",
-	"mythicalbots.xyz": "",
-	"top.gg": "",
-	"yabl.xyz": ""
-  }
+   ArcaneBotList = "",
+   BotListSpace = "",
+   BotsOnDiscord = "",
+   BotsForDiscord = "",
+   CloudBotList = "",
+   DiscordBoats = "",
+   DiscordBots = "",
+   DiscordApps = "",
+   DiscordBotWorld = "",
+   DiscordBotListv2 = "",
+   DiscordExtremeList = "",
+   DivineBotList = "",
+   LBots = "",
+   MythicalBots = "",
+   TopGG = "",
+   YetAnotherBotList = "",
+   WonderBotList = ""
 );
 ```
 You can manually trigger posting using
