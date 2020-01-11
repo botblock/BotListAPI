@@ -7,6 +7,9 @@ namespace BotListAPI
 {
     public class ListConfig
     {
+        [JsonProperty(PropertyName = "arcane-botcenter.xyz")]
+        public string ArcaneBotList { get; set; } = "";
+
         [JsonProperty(PropertyName = "botlist.space")]
         public string BotListSpace { get; set; } = "";
 

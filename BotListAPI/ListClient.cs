@@ -33,6 +33,9 @@ namespace BotListAPI
                 throw new ArgumentException("The list config cannot be null");
             Discord = client;
             Config = config;
+            if (Config.DiscordBotListv2 != "" && !Config.DiscordBotListv2.StartsWith("Bot"))
+                Config.DiscordBotListv2 = "Bot " + Config.DiscordBotListv2;
+
             Timer = new Timer
             {
                 Interval = 600000,
