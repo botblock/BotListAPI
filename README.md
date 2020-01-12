@@ -1,19 +1,19 @@
 # BotListAPI
 This is a C# lib that allows you to post your bots server count to all of the Discord bot lists.
 
-If you have any issues/suggestions post an issue here, join my Discord https://discord.gg/TjF6QDC or contact me xXBuilderBXx#0001
+If you have any issues/suggestions post an issue here, join my [Discord](https://discord.gg/TjF6QDC) or contact me BuilderB#0001
 
 # Features
 #### Please see at the bottom of this README for the todo list
 - Diffrent logtypes (none, error only, info, debug)
 - 17 Bot lists supported
 - Supports normal and sharded bots
-- Supports .net framework and .net core
+- Supports .NET Framework and .NET Core
 - Manually trigger posting
 - Automatically post server count every 10 minutes
 
 # How to use
-Install the nuget package here https://www.nuget.org/packages/BotListAPI
+Install the NuGet package here https://www.nuget.org/packages/BotListAPI
 
 Create a new instance of `BotListAPI.ListClient`
 
