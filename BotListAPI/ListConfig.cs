@@ -46,6 +46,15 @@ namespace BotListAPI
         [JsonProperty(PropertyName = "divinediscordbots.com")]
         public string DivineBotList { get; set; } = "";
 
+        [JsonProperty(PropertyName = "discordservices.net")]
+        public string DiscordServices { get; set; } = "";
+
+        [JsonProperty(PropertyName = "discordlist.co")]
+        public string DiscordListCo { get; set; } = "";
+
+        [JsonProperty(PropertyName = "glennbotlist.xyz")]
+        public string GlennBotlist { get; set; } = "";
+
         [JsonProperty(PropertyName = "lbots.org")]
         public string LBots { get; set; } = "";
 
