@@ -33,7 +33,7 @@ namespace BotListAPI
                 throw new ArgumentException("The list config cannot be null");
             Discord = client;
             Config = config;
-            if (Config.DiscordBotListv2 != "" && !Config.DiscordBotListv2.StartsWith("Bot"))
+            if (Config.DiscordBotListv2 != "" && !Config.DiscordBotListv2.StartsWith("Bot "))
                 Config.DiscordBotListv2 = "Bot " + Config.DiscordBotListv2;
 
             Timer = new Timer
@@ -74,7 +74,7 @@ namespace BotListAPI
                 _ = SendBotBlock(LogType);
         }
 
-        public readonly string Version = "5.0";
+        public readonly string Version = "5.5.2";
 
         /// <summary> Post server count to BotBlock.org </summary>
         public async Task SendBotBlock(LogType type)
