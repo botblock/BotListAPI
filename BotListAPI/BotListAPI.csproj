@@ -5,19 +5,19 @@
     <Authors>Builderb</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>Fluxpoint Development</Company>
-    <Version>5.5.2</Version>
+    <Version>5.5.3</Version>
     <PackageLicenseUrl></PackageLicenseUrl>
     <Copyright>Copyright 2019 Fluxpoint Development</Copyright>
     <RepositoryUrl>https://github.com/botblock/BotListAPI</RepositoryUrl>
     <PackageProjectUrl>https://fluxpoint.dev</PackageProjectUrl>
     <PackageTags>discord</PackageTags>
     <Description>A C# lib for all of the Discord bot list APIs</Description>
-    <PackageReleaseNotes>Added BotListCo and GlennBotList</PackageReleaseNotes>
+    <PackageReleaseNotes>Update newtonsoft to 13.0.3 and removed some lists.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Discord.Net.WebSocket" Version="2.3.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

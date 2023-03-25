@@ -7,44 +7,21 @@ namespace BotListAPI
 {
     public class ListConfig
     {
-        [JsonProperty(PropertyName = "arcane-center.xyz")]
-        public string ArcaneBotList { get; set; } = "";
-
-        [JsonProperty(PropertyName = "bladebotlist.xyz")]
-        public string BladeBotList { get; set; } = "";
-
         [JsonProperty(PropertyName = "blist.xyz")]
         public string BList { get; set; } = "";
 
-        [JsonProperty(PropertyName = "botlist.space")]
-        public string BotListSpace { get; set; } = "";
-
-        [JsonProperty(PropertyName = "botlists.com")]
-        public string AstroBotList { get; set; } = "";
 
         [JsonProperty(PropertyName = "bots.discordlabs.org")]
         public string DiscordLabs { get; set; } = "";
 
-        [JsonProperty(PropertyName = "bots.idledev.org")]
-        public string IdleDev { get; set; } = "";
-
         [JsonProperty(PropertyName = "bots.ondiscord.xyz")]
         public string BotsOnDiscord { get; set; } = "";
-
-        [JsonProperty(PropertyName = "botsdatabase.come")]
-        public string BotsDatabase { get; set; } = "";
 
         [JsonProperty(PropertyName = "botsfordiscord.com")]
         public string BotsForDiscord { get; set; } = "";
 
-        [JsonProperty(PropertyName = "discord.boats")]
-        public string DiscordBoats { get; set; } = "";
-
         [JsonProperty(PropertyName = "discord.bots.gg")]
         public string DiscordBots { get; set; } = "";
-
-        [JsonProperty(PropertyName = "discordapps.dev")]
-        public string DiscordApps { get; set; } = "";
 
         [JsonProperty(PropertyName = "discordbotlist.com")]
         public string DiscordBotListv2 { get; set; } = "";
@@ -58,23 +35,11 @@ namespace BotListAPI
         [JsonProperty(PropertyName = "discordservices.net")]
         public string DiscordServices { get; set; } = "";
 
-        [JsonProperty(PropertyName = "discordlistology.com")]
-        public string DiscordListology { get; set; } = "";
-
         [JsonProperty(PropertyName = "disforge.com")]
         public string DisForge { get; set; } = "";
 
-        [JsonProperty(PropertyName = "fateslist.xyz")]
-        public string FatestList { get; set; } = "";
-
         [JsonProperty(PropertyName = "infinitybotlist.com")]
         public string InfinityBotList { get; set; } = "";
-
-        [JsonProperty(PropertyName = "paradisebots.net")]
-        public string ParadiseBots { get; set; } = "";
-
-        [JsonProperty(PropertyName = "space-bot-list.xyz")]
-        public string SpaceBotList { get; set; } = "";
 
         [JsonProperty(PropertyName = "top.gg")]
         public string TopGG { get; set; } = "";
