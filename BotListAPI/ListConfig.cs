@@ -10,7 +10,6 @@ namespace BotListAPI
         [JsonProperty(PropertyName = "blist.xyz")]
         public string BList { get; set; } = "";
 
-
         [JsonProperty(PropertyName = "bots.discordlabs.org")]
         public string DiscordLabs { get; set; } = "";
 

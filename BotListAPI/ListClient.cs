@@ -10,6 +10,9 @@ using System.Timers;
 namespace BotListAPI
 {
     /// <summary> BotListAPI client to post server count </summary>
+    /// <remarks>
+    /// Docs: <see href="https://docs.fluxpoint.dev/botlistapi/"/>
+    /// </remarks>
     public class ListClient
     {
         public readonly ListConfig Config = new ListConfig();
