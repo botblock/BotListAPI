@@ -97,7 +97,7 @@ namespace BotListAPI
                 }
                 Http = new HttpClient();
                 Http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                Http.DefaultRequestHeaders.Add("User-Agent", $"BotListAPI {Version} - " + Discord.CurrentUser.ToString());
+                Http.DefaultRequestHeaders.Add("User-Agent", $"BotListAPI {Version} - {Discord.CurrentUser.Username}#{Discord.CurrentUser.Discriminator}");
             }
             if (!isError)
             {
